@@ -1,0 +1,12 @@
+build/
+install/
+log/
+**/_pycache_/
+*.pyc
+yolov8*.pt
+build/
+install/
+log/
+**/_pycache_/
+*.pyc
+yolov8*.pt

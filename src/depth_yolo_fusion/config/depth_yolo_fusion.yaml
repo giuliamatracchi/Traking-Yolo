@@ -1,0 +1,9 @@
+depth_yolo_fusion_node:
+  ros__parameters:
+    depth_topic: "/environment/DepthCamera/DepthCameraSDT/image_raw_32f"
+    depth_scale: 1.0
+    detections_topic: "yolo/detections"
+    output_annotated_depth_topic: "yolo/depth_annotated"
+    output_xyz_topic: "yolo/detections_xyz"
+    max_depth_m: 200.0
+

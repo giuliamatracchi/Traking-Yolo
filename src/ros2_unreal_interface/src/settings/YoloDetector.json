@@ -1,0 +1,7 @@
+{ 
+  "weights": "yolov8n.pt",
+  "conf_thres": 0.25,
+  "publish_debug": true,
+  "image_topic": "/environment/RGBCamera/CameraSDT/image_raw",
+  "desired_encoding": "rgb8"
+}

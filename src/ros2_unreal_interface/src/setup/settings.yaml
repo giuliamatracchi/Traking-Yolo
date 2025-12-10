@@ -1,0 +1,18 @@
+environment:
+  ros__parameters:
+    address: "192.168.1.95"
+    port: 9734
+    setup:
+      show: "None"
+      image_folder_path: "None"
+      mask_folder_path: "None"
+      mask_colorized: "RGB"
+      format_output_mask: ".png"
+      segmentation_video_path: "None"
+      bounding_box_file_path: "None"
+      bounding_box_print_output: "True"
+      video_path: "None"
+      render: "None"
+      max_depth: 200.0
+      processors_used : 
+        - "YoloDetector(CameraSDT)"

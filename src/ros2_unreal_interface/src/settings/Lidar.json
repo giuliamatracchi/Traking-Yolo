@@ -1,0 +1,6 @@
+{
+  "scan_frame": "base_link",
+  "scan_cloud_topic": "/scan_cloud",
+  "publish": true,
+  "queue_size": 1
+}

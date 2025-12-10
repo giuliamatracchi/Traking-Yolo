@@ -1,0 +1,16 @@
+{
+  "base_frame": "base_link",
+  "odom_frame": "map",
+  "odom_topic": "/gps/odom",
+  "publish_odom": true,
+  "queue_size_odom": 1,
+  "tf_broadcast": true,
+  "imu_frame": "gps",
+  "imu_topic": "/imu",
+  "publish_imu": true,
+  "queue_size_imu": 1,
+  "path_topic": "/gps/path",
+  "publish_path": true,
+  "queue_size_path": 1,
+  "distance_thr": 0.1
+}

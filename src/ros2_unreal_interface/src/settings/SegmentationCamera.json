@@ -1,0 +1,13 @@
+{
+	"camera_frame": "base_link",
+	"topic_raw": "/image_raw",
+	"publish_raw": true,
+	"queue_size_raw": 1,
+	"topic_compressed": "/image_raw/compressed",
+	"publish_compressed": true,
+	"queue_size_compressed": 1,
+
+	"output_encoding": "mono8",
+	"label_offset": 0,
+	"palette": {}
+}
