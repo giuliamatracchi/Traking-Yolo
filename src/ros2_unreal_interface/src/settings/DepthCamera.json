@@ -1,17 +1,27 @@
 {
-  "camera_frame": "base_link",
+  "camera_frame": "camera_depthcamerasdt",
 
   "topic_raw": "/image_raw",
   "publish_raw": true,
   "queue_size_raw": 1,
+
   "topic_compressed": "/image_raw/compressed",
-  "publish_compressed": true,
+  "publish_compressed": false,
   "queue_size_compressed": 1,
-  "raw_encoding": "mono8",
+
+  "raw_encoding": "32FC1",
   "raw_scale": 1.0,
-  "raw_auto_normalize": true,
-  "publish_float_raw": true,
-  "float_raw_topic": "/image_raw_32f"
+  "raw_auto_normalize": false,
+
+  "publish_float_raw": false,
+  "float_raw_topic": "/image_raw_32f",
+
+
+  "publish_viz": true,
+  "topic_viz": "/image_viz",
+  "queue_size_viz": 1,
+  "viz_auto_normalize": true,
+  "viz_max_depth_m": 200.0
 }
 
 

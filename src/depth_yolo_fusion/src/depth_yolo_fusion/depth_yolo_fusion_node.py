@@ -38,6 +38,9 @@ class DepthYoloFusionNode(Node):
         # nel tuo caso image_raw è 32FC1 in metri → scala = 1.0
         self.declare_parameter('depth_scale', 1.0)
 
+        self._debug_print_done = False
+
+
         self.depth_topic = self.get_parameter(
             'depth_topic'
         ).get_parameter_value().string_value
@@ -144,6 +147,27 @@ class DepthYoloFusionNode(Node):
             posinf=0.0,
             neginf=0.0
         )
+
+        
+        if not self._debug_print_done:
+            self._debug_print_done = True
+            h, w = depth_np.shape
+            cy, cx = h // 2, w // 2
+            self.get_logger().info(
+                f"Depth DEBUG: dtype={depth_np.dtype}, "
+                f"min={float(depth_np.min()):.6f}, "
+                f"max={float(depth_np.max()):.6f}, "
+                f"center={float(depth_np[cy, cx]):.6f}"
+            )
+        
+        if not self._debug_print_done:
+            self._debug_print_done = True
+            self.get_logger().info(f"Depth msg encoding: {msg.encoding}")
+    
+
+
+
+
 
         # timestamp frame depth (lo uso solo per pubblicare negli XYZ)
         t_depth = (
