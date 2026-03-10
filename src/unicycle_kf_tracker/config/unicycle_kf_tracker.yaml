@@ -1,0 +1,33 @@
+unicycle_kf_tracker:
+  ros__parameters:
+    input_topic: "yolo/detections_xyz"
+    output_topic: "unicycle_kf/tracks"
+
+    # Camera / proiezione
+    image_width_px: 1280
+    horizontal_fov_deg: 90.0
+
+    # Veicolo
+    vehicle_width_m: 3.0
+    wheelbase_m: 1.5
+
+    # Filtro
+    dt_default: 0.1
+    gate_threshold: 9.21
+    sigma_proc_x: 0.10
+    sigma_proc_y: 0.10
+    sigma_proc_psi_deg: 2.0
+    sigma_proc_v: 0.75
+    sigma_proc_omega_deg: 12.0
+    sigma_meas_x: 0.80
+    sigma_meas_y: 0.80
+
+    # Gestione tracce
+    track_timeout_sec: 1.0
+    min_dt_sec: 0.03
+    max_dt_sec: 0.50
+    min_valid_depth_m: 0.1
+
+    # Filtri opzionali
+    allowed_classes: []
+
