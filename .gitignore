@@ -10,3 +10,8 @@ log/
 **/_pycache_/
 *.pyc
 yolov8*.pt
+
+*.pth
+*.h5
+*.onnx
+
