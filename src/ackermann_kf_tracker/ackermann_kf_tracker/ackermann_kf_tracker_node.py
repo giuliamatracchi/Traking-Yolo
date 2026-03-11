@@ -201,6 +201,8 @@ class AckermannKFTrackerNode(Node):
 
         self.declare_parameter("input_topic", "yolo/detections_xyz")
         self.declare_parameter("output_topic", "ackermann_kf/tracks")
+        self.declare_parameter("allowed_classes", ["*"])
+
 
         self.declare_parameter("image_width_px", 1280)
         self.declare_parameter("horizontal_fov_deg", 90.0)
@@ -223,7 +225,7 @@ class AckermannKFTrackerNode(Node):
         self.declare_parameter("max_dt_sec", 0.50)
         self.declare_parameter("min_valid_depth_m", 0.1)
 
-        self.declare_parameter("allowed_classes", [])
+       
 
         self.input_topic = self.get_parameter("input_topic").get_parameter_value().string_value
         self.output_topic = self.get_parameter("output_topic").get_parameter_value().string_value

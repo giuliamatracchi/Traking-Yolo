@@ -42,16 +42,17 @@ def launch_setup(context, *args, **kwargs):
     )
 
     actions = []
+
     actions.append(LogInfo(msg=f'[experiments] Stage selezionato: {stage}'))
 
-    # YOLO sempre attivo in tutti gli stage
+    # stage=yolo -> solo YOLO
     actions.append(
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(yolo_launch)
         )
     )
 
-    # FUSION attiva in tutti gli stage tranne yolo
+    # stage=fusion -> YOLO + depth fusion
     if stage in ['fusion', 'ackermann', 'unicycle']:
         actions.append(
             IncludeLaunchDescription(
@@ -59,7 +60,7 @@ def launch_setup(context, *args, **kwargs):
             )
         )
 
-    # Tracker Ackermann
+    # stage=ackermann -> YOLO + depth fusion + ackermann tracker
     if stage == 'ackermann':
         actions.append(
             IncludeLaunchDescription(
@@ -67,7 +68,7 @@ def launch_setup(context, *args, **kwargs):
             )
         )
 
-    # Tracker Unicycle
+    # stage=unicycle -> YOLO + depth fusion + unicycle tracker
     if stage == 'unicycle':
         actions.append(
             IncludeLaunchDescription(

@@ -29,5 +29,5 @@ ackermann_kf_tracker:
     min_valid_depth_m: 0.1
 
     # Filtri opzionali
-    allowed_classes: []
+    allowed_classes: ["*"]
 
