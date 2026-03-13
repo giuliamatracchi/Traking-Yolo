@@ -12,9 +12,6 @@ import os
 import yaml
 from typing import List, Dict, Any, Tuple
 from ultralytics import YOLO
-from rcl_interfaces.msg import ParameterDescriptor, ParameterType
-
-
 
 
 class YoloDetectorNode(Node):
@@ -56,8 +53,7 @@ class YoloDetectorNode(Node):
         self.declare_parameter("model_path", "yolov8x.pt")
         self.declare_parameter("conf_threshold", 0.25)
         self.declare_parameter("iou_threshold", 0.45)
-        self.declare_parameter("class_filter",[0, 2],ParameterDescriptor(type=ParameterType.PARAMETER_INTEGER_ARRAY))
-
+        self.declare_parameter("class_filter", [])
 
         # opzionale: file di configurazione tracker YOLO (bytetrack.yaml, botsort.yaml, ...)
         self.declare_parameter("tracker_cfg", "")
