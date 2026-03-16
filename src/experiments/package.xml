@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>experiments</name>
+  <version>0.0.1</version>
+  <description>Experiment orchestration pipeline</description>
+
+  <maintainer email="matracchigiulia@gmail.com">isarlab</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>ament_index_python</exec_depend>
+
+  <exec_depend>yolo_detector</exec_depend>
+  <exec_depend>depth_yolo_fusion</exec_depend>
+  <exec_depend>ackermann_kf_tracker</exec_depend>
+  <exec_depend>unicycle_kf_tracker</exec_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
+

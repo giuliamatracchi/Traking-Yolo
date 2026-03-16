@@ -2,15 +2,20 @@
 <package format="3">
   <name>ackermann_kf_tracker</name>
   <version>0.0.1</version>
-  <description>EKF Ackermann tracker based on YOLO tracking + depth fusion</description>
+  <description>EKF Ackermann tracker based on YOLO tracking and depth fusion</description>
 
-  <maintainer email="user@example.com">User</maintainer>
+  <maintainer email="matracchigiulia@gmail.com">isarlab</maintainer>
   <license>MIT</license>
 
   <buildtool_depend>ament_python</buildtool_depend>
 
-  <exec_depend>rclpy</exec_depend>
-  <exec_depend>std_msgs</exec_depend>
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>ament_index_python</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
