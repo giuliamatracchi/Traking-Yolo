@@ -13,29 +13,16 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package='yolo_detector',
-            executable='yolo_detector',  # deve corrispondere alla entry point in setup.py
+            executable='yolo_detector',
             name='YoloDetector',
             parameters=[{
-                # Parametri che compongono il topic di input:
-                'env_topic': 'environment',
-                'sensor_type': 'RGBCamera',
-                'specific_name': 'CameraSDT',
-                'topic_raw': 'image_raw',
-
-                # (OPZIONALE) Se vuoi forzare un topic assoluto diverso, decommenta:
-                # 'input_topic': '/environment/RGBCamera/CameraAlt/image_raw',
-
-                # Output & modello
                 'output_image_topic': 'yolo/annotated_image',
                 'output_detections_topic': 'yolo/detections',
                 'model_path': model_path,
                 'conf_threshold': 0.25,
                 'iou_threshold': 0.45,
-                'class_filter': [0,2]  # es. [0,2] per person & car
+                'tracker_cfg': '',
             }],
-            # remappings=[  # di norma non serve più, ma resta qui per completezza
-            #     ('/camera/image', '/environment/RGBCamera/CameraSDT/image_raw'),
-            # ]
         )
     ])
 
