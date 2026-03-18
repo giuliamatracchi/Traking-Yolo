@@ -1,0 +1,23 @@
+trajectory_metrics_node:
+  ros__parameters:
+    stage: "ackermann"
+
+    camera_gps_topic: "/environment/GPS/GPSSDT/odom"
+    ambulance_gps_topic: "/environment/GPS/GPSSDTAMBULANCE/odom"
+
+    fusion_topic: "/yolo/detections_xyz"
+    ackermann_topic: "/ackermann_kf/tracks"
+    unicycle_topic: "/unicycle_kf/tracks"
+
+    target_track_id: -1
+    allowed_classes: ["truck", "ambulance", "*"]
+
+    image_width_px: 1280
+    horizontal_fov_deg: 90.0
+
+    max_time_offset_sec: 0.30
+
+    output_dir: "/home/isarlab/ros2_humble/metrics_output"
+    save_csv: true
+    save_plots: true
+

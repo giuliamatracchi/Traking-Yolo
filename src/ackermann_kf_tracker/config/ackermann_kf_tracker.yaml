@@ -7,9 +7,10 @@ ackermann_kf_tracker:
     image_width_px: 1280
     horizontal_fov_deg: 90.0
 
-    # Veicolo
+    # Veicolo Ackermann / bicycle
     vehicle_width_m: 3.0
-    wheelbase_m: 1.5
+    lf_m: 0.75
+    lr_m: 0.75
     max_steer_deg: 35.0
 
     # Filtro
@@ -27,6 +28,7 @@ ackermann_kf_tracker:
     min_dt_sec: 0.03
     max_dt_sec: 0.50
     min_valid_depth_m: 0.1
+    min_speed_for_steer_mps: 0.2
 
     # Filtri opzionali
     allowed_classes: ["*"]
