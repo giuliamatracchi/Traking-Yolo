@@ -1,0 +1,2 @@
+stage,target_id,n_samples,mae_x,mae_y,mae_norm,rmse_x,rmse_y,rmse_norm,final_error,max_error
+fusion,1,40,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
