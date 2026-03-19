@@ -5,8 +5,10 @@ import threading
 import time
 import os
 import importlib
+import numpy as np
 import json
 from syndatatoolbox_api.environment import Environment as UEEnvironment
+from geometry_msgs.msg import PoseStamped
 
 
 class Environment(Node):
@@ -71,6 +73,13 @@ class Environment(Node):
         self.build_sensors() 
         self._sensor_thread = threading.Thread(target=self.publish_loop, name='sensors_thread', daemon=True)
         self._sensor_thread.start()
+
+        self.action_manager = "CoordinateActionManager(CoordinateActionManagerSDT)"
+        self.action_type = "MOVETO"
+        self.des_pose = None
+        self.des_orientation = None
+        self.action_sub = self.create_subscription(PoseStamped, "/ambulance_position_des", self.update_des_pose, 10)
+        self.action_manager_timer = self.create_timer(0.1, self.action_manager_callback)
         
         # Arresta il thread sensori quando parte rclpy.shutdown()
         try:
@@ -83,6 +92,16 @@ class Environment(Node):
             # Fallback: se non riesce a registrare il callback, logga ma continua
             self.get_logger().warning(f"Impossibile registrare on_shutdown: {e}")
       
+
+    def update_des_pose(self, data):
+        self.des_pose = np.array([data.pose.position.x, data.pose.position.y, data.pose.position.z])
+        self.des_orientation = np.array([data.pose.orientation.x, data.pose.orientation.y, data.pose.orientation.z, data.pose.orientation.w])
+
+
+    def action_manager_callback(self):
+        if self.des_pose is not None and self.des_orientation is not None:
+            action = list(np.concatenate([self.des_pose, self.des_orientation]) * 100)
+            self.ue_env.perform_action(self.action_manager, {self.action_type: action})
 
     # Costruzione sensori
     def build_sensors(self, sensors_used=None, settings_dir=None, env_topic=None):
