@@ -1,0 +1,65 @@
+[INFO] [launch]: All log files can be found below /home/isarlab/.ros/log/2026-03-24-11-48-27-400084-DESKTOP-PQ37J3S-29736
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [launch.user]: [experiments] Stage selezionato: fusion
+[INFO] [yolo_detector-1]: process started with pid [29769]
+[INFO] [depth_yolo_fusion-2]: process started with pid [29771]
+[depth_yolo_fusion-2] [INFO] [1774349308.113121956] [depth_yolo_fusion_node]: Depth scale: 1.0 [m/unità]
+[depth_yolo_fusion-2] [INFO] [1774349308.113571153] [depth_yolo_fusion_node]: Depth topic: /environment/DepthCamera/DepthCameraSDT/image_raw
+[depth_yolo_fusion-2] [INFO] [1774349308.113874338] [depth_yolo_fusion_node]: Detections topic: yolo/detections
+[yolo_detector-1] [INFO] [1774349309.532912562] [YoloDetector]: YOLO tracking: ON (track=True)
+[yolo_detector-1] [INFO] [1774349309.534584973] [YoloDetector]: YoloDetectorNode inizializzato con:
+[yolo_detector-1]   input_topic: /environment/RGBCamera/CameraSDT/image_raw
+[yolo_detector-1]   output_image_topic: yolo/annotated_image
+[yolo_detector-1]   output_detections_topic: yolo/detections
+[yolo_detector-1]   model_path: /home/isarlab/ros2_humble/install/yolo_detector/share/yolo_detector/models/yolov8n.pt
+[yolo_detector-1]   conf_threshold=0.25 | iou_threshold=0.45 | class_filter=[]
+[yolo_detector-1]   tracker_cfg: (default YOLO)
+[yolo_detector-1] [INFO] [1774349309.596248257] [YoloDetector]: Loaded Ultralytics YOLO from /home/isarlab/ros2_humble/install/yolo_detector/share/yolo_detector/models/yolov8n.pt
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[depth_yolo_fusion-2] Traceback (most recent call last):
+[depth_yolo_fusion-2]   File "/home/isarlab/ros2_humble/install/depth_yolo_fusion/lib/depth_yolo_fusion/depth_yolo_fusion", line 33, in <module>
+[depth_yolo_fusion-2]     sys.exit(load_entry_point('depth-yolo-fusion==0.0.1', 'console_scripts', 'depth_yolo_fusion')())
+[depth_yolo_fusion-2]   File "/home/isarlab/ros2_humble/install/depth_yolo_fusion/lib/python3.10/site-packages/depth_yolo_fusion/depth_yolo_fusion_node.py", line 277, in main
+[depth_yolo_fusion-2]     rclpy.spin(node)
+[depth_yolo_fusion-2]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 229, in spin
+[depth_yolo_fusion-2]     executor.spin_once()
+[depth_yolo_fusion-2]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 751, in spin_once
+[depth_yolo_fusion-2]     self._spin_once_impl(timeout_sec)
+[depth_yolo_fusion-2]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 740, in _spin_once_impl
+[depth_yolo_fusion-2]     handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+[depth_yolo_fusion-2]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 723, in wait_for_ready_callbacks
+[depth_yolo_fusion-2]     return next(self._cb_iter)
+[depth_yolo_fusion-2]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 620, in _wait_for_ready_callbacks
+[depth_yolo_fusion-2]     wait_set.wait(timeout_nsec)
+[depth_yolo_fusion-2] KeyboardInterrupt
+[yolo_detector-1] Traceback (most recent call last):
+[yolo_detector-1]   File "/home/isarlab/ros2_humble/install/yolo_detector/lib/python3.10/site-packages/yolo_detector/yolo_detector_node.py", line 295, in main
+[yolo_detector-1]     rclpy.spin(node)
+[yolo_detector-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 229, in spin
+[yolo_detector-1]     executor.spin_once()
+[yolo_detector-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 751, in spin_once
+[yolo_detector-1]     self._spin_once_impl(timeout_sec)
+[yolo_detector-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 740, in _spin_once_impl
+[yolo_detector-1]     handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+[yolo_detector-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 723, in wait_for_ready_callbacks
+[yolo_detector-1]     return next(self._cb_iter)
+[yolo_detector-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 620, in _wait_for_ready_callbacks
+[yolo_detector-1]     wait_set.wait(timeout_nsec)
+[yolo_detector-1] KeyboardInterrupt
+[yolo_detector-1] 
+[yolo_detector-1] During handling of the above exception, another exception occurred:
+[yolo_detector-1] 
+[yolo_detector-1] Traceback (most recent call last):
+[yolo_detector-1]   File "/home/isarlab/ros2_humble/install/yolo_detector/lib/yolo_detector/yolo_detector", line 33, in <module>
+[yolo_detector-1]     sys.exit(load_entry_point('yolo-detector==0.0.1', 'console_scripts', 'yolo_detector')())
+[yolo_detector-1]   File "/home/isarlab/ros2_humble/install/yolo_detector/lib/python3.10/site-packages/yolo_detector/yolo_detector_node.py", line 298, in main
+[yolo_detector-1]     rclpy.shutdown()
+[yolo_detector-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 130, in shutdown
+[yolo_detector-1]     _shutdown(context=context)
+[yolo_detector-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/utilities.py", line 58, in shutdown
+[yolo_detector-1]     return context.shutdown()
+[yolo_detector-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/context.py", line 102, in shutdown
+[yolo_detector-1]     self.__context.shutdown()
+[yolo_detector-1] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:241
+[ERROR] [depth_yolo_fusion-2]: process has died [pid 29771, exit code -2, cmd '/home/isarlab/ros2_humble/install/depth_yolo_fusion/lib/depth_yolo_fusion/depth_yolo_fusion --ros-args -r __node:=depth_yolo_fusion_node --params-file /home/isarlab/ros2_humble/install/depth_yolo_fusion/share/depth_yolo_fusion/config/depth_yolo_fusion.yaml'].
+[ERROR] [yolo_detector-1]: process has died [pid 29769, exit code 1, cmd '/home/isarlab/ros2_humble/install/yolo_detector/lib/yolo_detector/yolo_detector --ros-args -r __node:=YoloDetector --params-file /tmp/launch_params_ti9sbm5k'].

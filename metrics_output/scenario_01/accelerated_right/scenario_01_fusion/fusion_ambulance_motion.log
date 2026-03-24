@@ -1,0 +1,18 @@
+[INFO] [1774349451.998711432] [ambulance_motion_node]: AmbulanceMotionNode started
+  odom_topic           : /environment/GPS/GPSSDTAMBULANCE/odom
+  cmd_topic            : /ambulance_position_des
+  frame_id             : map
+  rate_hz              : 10.0
+  motion_type          : accelerated_right
+  duration_sec         : 20.0
+  reset_hold_sec       : 1.0
+  speed_mps            : 1.0
+  amplitude_m          : 1.0
+  frequency_hz         : 0.15
+  burst_speed_mps      : 5.0
+  tail_speed_mps       : 0.1
+  burst_tau_sec        : 0.35
+  reference_pose_file  : /home/isarlab/ros2_humble/metrics_output/scenario_01/ambulance_reference_pose.yaml
+[INFO] [1774349452.025290359] [ambulance_motion_node]: Loaded reference pose from file.
+[INFO] [1774349452.081757611] [ambulance_motion_node]: Reset/hold phase for 1.00 s, then motion starts.
+[INFO] [1774349473.181826471] [ambulance_motion_node]: Trajectory completed.

@@ -1,0 +1,49 @@
+[INFO] [1774349184.244936286] [trajectory_metrics_node]: TrajectoryMetricsNode ready
+  stage: fusion
+  camera_gps_topic: /environment/GPS/GPSSDT/odom
+  ambulance_gps_topic: /environment/GPS/GPSSDTAMBULANCE/odom
+  estimation_topic: /yolo/detections_xyz
+  target_track_id: -1
+  output_dir: /home/isarlab/ros2_humble/metrics_output/scenario_01/straight_right/scenario_01_fusion
+[INFO] [1774349184.298337210] [trajectory_metrics_node]: GT inizializzata: first_gt_rel_cam = [-0.008, 0.000]
+[INFO] [1774349184.298718324] [trajectory_metrics_node]: Target selezionato automaticamente: track_id=2
+[INFO] [1774349184.299019666] [trajectory_metrics_node]: Primo campione stima per target 2: [3.373, -0.817]
+[INFO] [1774349187.216279629] [trajectory_metrics_node]: Rotazione iniziale GT->stima fissata: 115.84 deg
+[INFO] [1774349212.971465098] [trajectory_metrics_node]: Salvati:
+  /home/isarlab/ros2_humble/metrics_output/scenario_01/straight_right/scenario_01_fusion/fusion_metrics_detail.csv
+  /home/isarlab/ros2_humble/metrics_output/scenario_01/straight_right/scenario_01_fusion/fusion_metrics_summary.csv
+  /home/isarlab/ros2_humble/metrics_output/scenario_01/straight_right/scenario_01_fusion/fusion_trajectory.png
+  /home/isarlab/ros2_humble/metrics_output/scenario_01/straight_right/scenario_01_fusion/fusion_error.png
+Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
+[INFO] [1774349212.971895829] [trajectory_metrics_node]: Summary fusion: target_id=2, n=230, MAE_norm=9708754204632606366852370460049408.000 m, RMSE_norm=35840698332854642207335063098490880.000 m, final_error=80.437 m, max_error=164517723138579965825238092493094912.000 m
+Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
+Traceback (most recent call last):
+  File "/home/isarlab/ros2_humble/build/trajectory_metrics/trajectory_metrics/trajectory_metrics_node.py", line 562, in main
+    rclpy.spin(node)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 229, in spin
+    executor.spin_once()
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 751, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 740, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 723, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 620, in _wait_for_ready_callbacks
+    wait_set.wait(timeout_nsec)
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/isarlab/ros2_humble/install/trajectory_metrics/lib/trajectory_metrics/trajectory_metrics_node", line 33, in <module>
+    sys.exit(load_entry_point('trajectory-metrics', 'console_scripts', 'trajectory_metrics_node')())
+  File "/home/isarlab/ros2_humble/build/trajectory_metrics/trajectory_metrics/trajectory_metrics_node.py", line 569, in main
+    rclpy.shutdown()
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 130, in shutdown
+    _shutdown(context=context)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/utilities.py", line 58, in shutdown
+    return context.shutdown()
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/context.py", line 102, in shutdown
+    self.__context.shutdown()
+rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:241
+[ros2run]: Process exited with failure 1

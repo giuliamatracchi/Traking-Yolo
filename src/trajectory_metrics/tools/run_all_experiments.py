@@ -13,6 +13,7 @@ from pathlib import Path
 
 
 STAGES = ["fusion", "unicycle", "ackermann"]
+MOTION_TYPES = ["straight_right", "sine_right", "accelerated_right"]
 
 
 def log(msg: str) -> None:
@@ -50,6 +51,15 @@ def start_process(
     )
     proc._log_handle = f  # type: ignore[attr-defined]
     return proc
+
+
+def close_log_handle(proc: subprocess.Popen) -> None:
+    handle = getattr(proc, "_log_handle", None)
+    if handle is not None:
+        try:
+            handle.close()
+        except Exception:
+            pass
 
 
 def stop_process(proc: subprocess.Popen | None, name: str, timeout: float = 10.0) -> None:
@@ -96,15 +106,6 @@ def stop_process(proc: subprocess.Popen | None, name: str, timeout: float = 10.0
     close_log_handle(proc)
 
 
-def close_log_handle(proc: subprocess.Popen) -> None:
-    handle = getattr(proc, "_log_handle", None)
-    if handle is not None:
-        try:
-            handle.close()
-        except Exception:
-            pass
-
-
 def wait_or_fail(proc: subprocess.Popen, name: str, warmup_sec: float) -> None:
     time.sleep(warmup_sec)
     if proc.poll() is not None:
@@ -131,18 +132,29 @@ def run_stage(
     metrics_warmup_sec: float,
     output_root: Path,
     target_track_id: int,
+    motion_type: str,
+    motion_rate_hz: float,
+    motion_speed_mps: float,
+    motion_amplitude_m: float,
+    motion_frequency_hz: float,
+    motion_reset_hold_sec: float,
+    motion_burst_speed_mps: float,
+    motion_tail_speed_mps: float,
+    motion_burst_tau_sec: float,
 ) -> None:
     stage_dir = stage_output_dir(output_root, scenario_name, stage)
     stage_dir.mkdir(parents=True, exist_ok=True)
 
     pipeline_log = stage_dir / f"{stage}_pipeline.log"
     metrics_log = stage_dir / f"{stage}_metrics.log"
+    motion_log = stage_dir / f"{stage}_ambulance_motion.log"
 
     pipeline_proc = None
     metrics_proc = None
+    motion_proc = None
 
     try:
-        log(f"=== Stage: {stage} ===")
+        log(f"=== Stage: {stage} | motion: {motion_type} ===")
         log(f"Output dir: {stage_dir}")
 
         pipeline_cmd = f"ros2 launch experiments experiment_pipeline.launch.py stage:={stage}"
@@ -160,10 +172,32 @@ def run_stage(
         log(f"Metrics node started for stage={stage}")
         wait_or_fail(metrics_proc, f"{stage} metrics node", metrics_warmup_sec)
 
+        reference_pose_file = output_root.parent / "ambulance_reference_pose.yaml"
+
+        motion_cmd = (
+            "ros2 run experiments ambulance_motion_node --ros-args "
+            f"-p motion_type:={motion_type} "
+            f"-p rate_hz:={motion_rate_hz} "
+            f"-p duration_sec:={duration_sec} "
+            f"-p speed_mps:={motion_speed_mps} "
+            f"-p amplitude_m:={motion_amplitude_m} "
+            f"-p frequency_hz:={motion_frequency_hz} "
+            f"-p reset_hold_sec:={motion_reset_hold_sec} "
+            f"-p burst_speed_mps:={motion_burst_speed_mps} "
+            f"-p tail_speed_mps:={motion_tail_speed_mps} "
+            f"-p burst_tau_sec:={motion_burst_tau_sec} "
+            f"-p reference_pose_file:={shlex.quote(str(reference_pose_file))}"
+        )
+        motion_proc = start_process(workspace, motion_cmd, motion_log)
+        log(f"Ambulance motion node started for stage={stage}")
+        wait_or_fail(motion_proc, f"{stage} ambulance motion node", 2.0)
+
         log(f"Collecting data for {duration_sec:.1f} s...")
         time.sleep(duration_sec)
 
     finally:
+        stop_process(motion_proc, f"{stage} ambulance motion node")
+        time.sleep(1.0)
         stop_process(metrics_proc, f"{stage} metrics node")
         time.sleep(1.0)
         stop_process(pipeline_proc, f"{stage} pipeline")
@@ -211,7 +245,10 @@ def run_compare(
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Run fusion, unicycle, ackermann sequentially, save metrics, then compare them."
+        description=(
+            "Run fusion, unicycle, ackermann sequentially for multiple ambulance motions, "
+            "save metrics, and compare stages for each motion."
+        )
     )
     parser.add_argument(
         "--workspace",
@@ -226,13 +263,13 @@ def main() -> int:
     parser.add_argument(
         "--duration-sec",
         type=float,
-        required=True,
+        default=20.0,
         help="How long to record metrics for each stage",
     )
     parser.add_argument(
         "--output-root",
         default=None,
-        help="Root directory for outputs. Default: <workspace>/metrics_output",
+        help="Root directory for outputs. Default: <workspace>/metrics_output/<scenario_name>",
     )
     parser.add_argument(
         "--target-track-id",
@@ -253,18 +290,65 @@ def main() -> int:
         help="Warmup after starting metrics node",
     )
 
+    parser.add_argument(
+        "--motion-rate-hz",
+        type=float,
+        default=10.0,
+        help="Ambulance desired pose publishing frequency",
+    )
+    parser.add_argument(
+        "--motion-speed-mps",
+        type=float,
+        default=1.0,
+        help="Straight and sine forward speed",
+    )
+    parser.add_argument(
+        "--motion-amplitude-m",
+        type=float,
+        default=1.0,
+        help="Sine lateral amplitude",
+    )
+    parser.add_argument(
+        "--motion-frequency-hz",
+        type=float,
+        default=0.15,
+        help="Sine frequency",
+    )
+    parser.add_argument(
+        "--motion-reset-hold-sec",
+        type=float,
+        default=1.0,
+        help="How long to republish initial pose before moving",
+    )
+
+    parser.add_argument(
+        "--motion-burst-speed-mps",
+        type=float,
+        default=5.0,
+        help="Initial burst speed for accelerated_right",
+    )
+    parser.add_argument(
+        "--motion-tail-speed-mps",
+        type=float,
+        default=0.10,
+        help="Residual speed after burst for accelerated_right",
+    )
+    parser.add_argument(
+        "--motion-burst-tau-sec",
+        type=float,
+        default=0.35,
+        help="Exponential slowdown time constant for accelerated_right",
+    )
+
     args = parser.parse_args()
 
     workspace = os.path.abspath(os.path.expanduser(args.workspace))
-    output_root = (
+    scenario_root = (
         Path(os.path.abspath(os.path.expanduser(args.output_root)))
         if args.output_root is not None
-        else Path(workspace) / "metrics_output"
+        else Path(workspace) / "metrics_output" / args.scenario_name
     )
-    output_root.mkdir(parents=True, exist_ok=True)
-
-    compare_out_dir = output_root / f"{args.scenario_name}_compare"
-    compare_out_dir.mkdir(parents=True, exist_ok=True)
+    scenario_root.mkdir(parents=True, exist_ok=True)
 
     if not Path(workspace, "install", "setup.bash").exists():
         raise RuntimeError(
@@ -273,27 +357,48 @@ def main() -> int:
         )
 
     try:
-        for stage in STAGES:
-            run_stage(
+        for motion_type in MOTION_TYPES:
+            motion_root = scenario_root / motion_type
+            motion_root.mkdir(parents=True, exist_ok=True)
+
+            log("")
+            log("============================================================")
+            log(f"Running motion set: {motion_type}")
+            log("============================================================")
+
+            for stage in STAGES:
+                run_stage(
+                    workspace=workspace,
+                    scenario_name=args.scenario_name,
+                    stage=stage,
+                    duration_sec=args.duration_sec,
+                    pipeline_warmup_sec=args.pipeline_warmup_sec,
+                    metrics_warmup_sec=args.metrics_warmup_sec,
+                    output_root=motion_root,
+                    target_track_id=args.target_track_id,
+                    motion_type=motion_type,
+                    motion_rate_hz=args.motion_rate_hz,
+                    motion_speed_mps=args.motion_speed_mps,
+                    motion_amplitude_m=args.motion_amplitude_m,
+                    motion_frequency_hz=args.motion_frequency_hz,
+                    motion_reset_hold_sec=args.motion_reset_hold_sec,
+                    motion_burst_speed_mps=args.motion_burst_speed_mps,
+                    motion_tail_speed_mps=args.motion_tail_speed_mps,
+                    motion_burst_tau_sec=args.motion_burst_tau_sec,
+                )
+
+            compare_out_dir = motion_root / "compare"
+            compare_out_dir.mkdir(parents=True, exist_ok=True)
+
+            run_compare(
                 workspace=workspace,
                 scenario_name=args.scenario_name,
-                stage=stage,
-                duration_sec=args.duration_sec,
-                pipeline_warmup_sec=args.pipeline_warmup_sec,
-                metrics_warmup_sec=args.metrics_warmup_sec,
-                output_root=output_root,
-                target_track_id=args.target_track_id,
+                output_root=motion_root,
+                compare_out_dir=compare_out_dir,
             )
 
-        run_compare(
-            workspace=workspace,
-            scenario_name=args.scenario_name,
-            output_root=output_root,
-            compare_out_dir=compare_out_dir,
-        )
-
-        log("All stages completed successfully.")
-        log(f"Final outputs in: {compare_out_dir}")
+        log("All motions and stages completed successfully.")
+        log(f"Final outputs in: {scenario_root}")
         return 0
 
     except KeyboardInterrupt:
@@ -306,3 +411,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+

@@ -21,4 +21,10 @@ setup(
     maintainer_email='matracchigiulia@gmail.com',
     description='Experiment orchestration pipeline',
     license='MIT',
+    entry_points={
+        'console_scripts': [
+            'ambulance_motion_node = experiments.ambulance_motion_node:main',
+        ],
+    },
 )
+
