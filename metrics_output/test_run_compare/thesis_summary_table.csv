@@ -1,4 +1,0 @@
-stage,n_samples,mae_x,mae_y,mae_norm,rmse_x,rmse_y,rmse_norm,final_error,max_error
-fusion,40,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-unicycle,35,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-ackermann,39,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

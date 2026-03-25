@@ -1,24 +1,27 @@
-[INFO] [1774349403.144976223] [trajectory_metrics_node]: TrajectoryMetricsNode ready
+[INFO] [1774434861.451747477] [trajectory_metrics_node]: TrajectoryMetricsNode ready
   stage: ackermann
   camera_gps_topic: /environment/GPS/GPSSDT/odom
   ambulance_gps_topic: /environment/GPS/GPSSDTAMBULANCE/odom
   estimation_topic: /ackermann_kf/tracks
-  target_track_id: -1
+  target_track_id: 1
   output_dir: /home/isarlab/ros2_humble/metrics_output/scenario_01/sine_right/scenario_01_ackermann
-[INFO] [1774349403.153298470] [trajectory_metrics_node]: GT inizializzata: first_gt_rel_cam = [99.787, 29.999]
-[INFO] [1774349417.834451299] [trajectory_metrics_node]: Target selezionato automaticamente: track_id=1
-[INFO] [1774349417.834932900] [trajectory_metrics_node]: Primo campione stima per target 1: [3.929, -0.805]
-[INFO] [1774349423.068136089] [trajectory_metrics_node]: Rotazione iniziale GT->stima fissata: 262.87 deg
-[INFO] [1774349431.607723919] [trajectory_metrics_node]: Salvati:
+  max_abs_pose_m: 10000.0
+  max_abs_estimate_m: 10000.0
+  max_abs_error_m: 10000.0
+[INFO] [1774434861.467815058] [trajectory_metrics_node]: GT inizializzata: first_gt_rel_cam = [100.061, 29.699]
+[INFO] [1774434861.468312975] [trajectory_metrics_node]: Primo campione stima per target 1: [3.934, -0.814]
+[WARN] [1774434864.978369125] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=3.308722450212111e-24, y=-5.316609648471509e+34
+[INFO] [1774434883.395774634] [trajectory_metrics_node]: Rotazione iniziale GT->stima fissata: 65.95 deg
+[INFO] [1774434889.897408731] [trajectory_metrics_node]: Salvati:
   /home/isarlab/ros2_humble/metrics_output/scenario_01/sine_right/scenario_01_ackermann/ackermann_metrics_detail.csv
   /home/isarlab/ros2_humble/metrics_output/scenario_01/sine_right/scenario_01_ackermann/ackermann_metrics_summary.csv
   /home/isarlab/ros2_humble/metrics_output/scenario_01/sine_right/scenario_01_ackermann/ackermann_trajectory.png
   /home/isarlab/ros2_humble/metrics_output/scenario_01/sine_right/scenario_01_ackermann/ackermann_error.png
 Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
-[INFO] [1774349431.608577584] [trajectory_metrics_node]: Summary ackermann: target_id=1, n=83, MAE_norm=2.433 m, RMSE_norm=11.599 m, final_error=0.134 m, max_error=104.220 m
+[INFO] [1774434889.897845376] [trajectory_metrics_node]: Summary ackermann: target_id=1, n=247, MAE_norm=9.630 m, RMSE_norm=15.698 m, final_error=0.406 m, max_error=104.383 m
 Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
 Traceback (most recent call last):
-  File "/home/isarlab/ros2_humble/build/trajectory_metrics/trajectory_metrics/trajectory_metrics_node.py", line 562, in main
+  File "/home/isarlab/ros2_humble/build/trajectory_metrics/trajectory_metrics/trajectory_metrics_node.py", line 712, in main
     rclpy.spin(node)
   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 229, in spin
     executor.spin_once()
@@ -36,8 +39,8 @@ During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
   File "/home/isarlab/ros2_humble/install/trajectory_metrics/lib/trajectory_metrics/trajectory_metrics_node", line 33, in <module>
-    sys.exit(load_entry_point('trajectory-metrics', 'console_scripts', 'trajectory_metrics_node')())
-  File "/home/isarlab/ros2_humble/build/trajectory_metrics/trajectory_metrics/trajectory_metrics_node.py", line 569, in main
+    sys.exit(load_entry_point('trajectory-metrics==0.0.1', 'console_scripts', 'trajectory_metrics_node')())
+  File "/home/isarlab/ros2_humble/build/trajectory_metrics/trajectory_metrics/trajectory_metrics_node.py", line 719, in main
     rclpy.shutdown()
   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 130, in shutdown
     _shutdown(context=context)

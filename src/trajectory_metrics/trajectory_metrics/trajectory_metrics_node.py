@@ -80,6 +80,11 @@ class TrajectoryMetricsNode(Node):
         self.declare_parameter("save_csv", True)
         self.declare_parameter("save_plots", True)
 
+        # Parametri per robustezza numerica / anti-overflow
+        self.declare_parameter("max_abs_pose_m", 1.0e4)
+        self.declare_parameter("max_abs_estimate_m", 1.0e4)
+        self.declare_parameter("max_abs_error_m", 1.0e4)
+
         self.stage = str(self.get_parameter("stage").value).strip().lower()
 
         self.camera_gps_topic = str(self.get_parameter("camera_gps_topic").value)
@@ -100,6 +105,10 @@ class TrajectoryMetricsNode(Node):
         self.output_dir = str(self.get_parameter("output_dir").value)
         self.save_csv = bool(self.get_parameter("save_csv").value)
         self.save_plots = bool(self.get_parameter("save_plots").value)
+
+        self.max_abs_pose_m = float(self.get_parameter("max_abs_pose_m").value)
+        self.max_abs_estimate_m = float(self.get_parameter("max_abs_estimate_m").value)
+        self.max_abs_error_m = float(self.get_parameter("max_abs_error_m").value)
 
         if self.stage not in {"fusion", "ackermann", "unicycle"}:
             raise RuntimeError("stage deve essere uno tra: fusion, ackermann, unicycle")
@@ -142,7 +151,10 @@ class TrajectoryMetricsNode(Node):
             f"  ambulance_gps_topic: {self.ambulance_gps_topic}\n"
             f"  estimation_topic: {self._estimation_topic()}\n"
             f"  target_track_id: {self.target_track_id}\n"
-            f"  output_dir: {self.output_dir}"
+            f"  output_dir: {self.output_dir}\n"
+            f"  max_abs_pose_m: {self.max_abs_pose_m}\n"
+            f"  max_abs_estimate_m: {self.max_abs_estimate_m}\n"
+            f"  max_abs_error_m: {self.max_abs_error_m}"
         )
 
     def _estimation_topic(self) -> str:
@@ -161,26 +173,87 @@ class TrajectoryMetricsNode(Node):
             del history[: len(history) - max_len]
             del times[: len(times) - max_len]
 
+    def _finite_scalar(self, value: Any) -> Optional[float]:
+        try:
+            v = float(value)
+        except Exception:
+            return None
+        if not math.isfinite(v):
+            return None
+        return v
+
+    def _valid_abs(self, value: float, limit: float) -> bool:
+        return math.isfinite(value) and abs(value) <= limit
+
+    def _valid_vec(self, vec: np.ndarray, limit: float) -> bool:
+        return bool(np.all(np.isfinite(vec))) and float(np.max(np.abs(vec))) <= limit
+
+    def _safe_norm2(self, x: float, y: float) -> float:
+        return float(math.hypot(x, y))
+
+    def _safe_rmse(self, arr: np.ndarray) -> float:
+        arr = np.asarray(arr, dtype=float)
+        arr = arr[np.isfinite(arr)]
+        if arr.size == 0:
+            return float("nan")
+
+        scale = float(np.max(np.abs(arr)))
+        if scale == 0.0:
+            return 0.0
+
+        scaled = arr / scale
+        return float(scale * math.sqrt(float(np.mean(scaled * scaled))))
+
     def camera_odom_callback(self, msg: Odometry) -> None:
         t = float(msg.header.stamp.sec) + float(msg.header.stamp.nanosec) * 1e-9
         p = msg.pose.pose.position
         q = msg.pose.pose.orientation
-        yaw = quat_to_yaw(q.x, q.y, q.z, q.w)
+        yaw_raw = quat_to_yaw(q.x, q.y, q.z, q.w)
+
+        x = self._finite_scalar(p.x)
+        y = self._finite_scalar(p.y)
+        yaw = self._finite_scalar(yaw_raw)
+
+        if x is None or y is None or yaw is None:
+            self.get_logger().warn("Scarto camera odom con valori non finiti.")
+            return
+
+        if not self._valid_abs(x, self.max_abs_pose_m) or not self._valid_abs(y, self.max_abs_pose_m):
+            self.get_logger().warn(
+                f"Scarto camera odom non plausibile: x={x}, y={y}"
+            )
+            return
+
         self._append_pose(
             self.camera_history,
             self.camera_times,
-            TimedPose2D(t=t, x=float(p.x), y=float(p.y), yaw=yaw),
+            TimedPose2D(t=t, x=x, y=y, yaw=yaw),
         )
 
     def ambulance_odom_callback(self, msg: Odometry) -> None:
         t = float(msg.header.stamp.sec) + float(msg.header.stamp.nanosec) * 1e-9
         p = msg.pose.pose.position
         q = msg.pose.pose.orientation
-        yaw = quat_to_yaw(q.x, q.y, q.z, q.w)
+        yaw_raw = quat_to_yaw(q.x, q.y, q.z, q.w)
+
+        x = self._finite_scalar(p.x)
+        y = self._finite_scalar(p.y)
+        yaw = self._finite_scalar(yaw_raw)
+
+        if x is None or y is None or yaw is None:
+            self.get_logger().warn("Scarto ambulance odom con valori non finiti.")
+            return
+
+        if not self._valid_abs(x, self.max_abs_pose_m) or not self._valid_abs(y, self.max_abs_pose_m):
+            self.get_logger().warn(
+                f"Scarto ambulance odom non plausibile: x={x}, y={y}"
+            )
+            return
+
         self._append_pose(
             self.ambulance_history,
             self.ambulance_times,
-            TimedPose2D(t=t, x=float(p.x), y=float(p.y), yaw=yaw),
+            TimedPose2D(t=t, x=x, y=y, yaw=yaw),
         )
 
     def _find_closest_pose(
@@ -216,10 +289,31 @@ class TrajectoryMetricsNode(Node):
         if cam is None or amb is None:
             return None
 
+        if (
+            not self._valid_abs(cam.x, self.max_abs_pose_m) or
+            not self._valid_abs(cam.y, self.max_abs_pose_m) or
+            not math.isfinite(cam.yaw) or
+            not self._valid_abs(amb.x, self.max_abs_pose_m) or
+            not self._valid_abs(amb.y, self.max_abs_pose_m) or
+            not math.isfinite(amb.yaw)
+        ):
+            self.get_logger().warn("Scarto GT: pose camera/ambulanza non valide.")
+            return None
+
         d_world = np.array([amb.x - cam.x, amb.y - cam.y], dtype=float)
+        if not self._valid_vec(d_world, 2.0 * self.max_abs_pose_m):
+            self.get_logger().warn(
+                f"Scarto GT: differenza world non plausibile [{d_world[0]}, {d_world[1]}]"
+            )
+            return None
 
         r_wc = rotation_2d(-cam.yaw)
         d_cam = r_wc @ d_world
+        if not self._valid_vec(d_cam, 2.0 * self.max_abs_pose_m):
+            self.get_logger().warn(
+                f"Scarto GT: trasformazione camera non plausibile [{d_cam[0]}, {d_cam[1]}]"
+            )
+            return None
 
         if self.first_gt_rel_cam is None:
             self.first_gt_rel_cam = d_cam.copy()
@@ -230,7 +324,14 @@ class TrajectoryMetricsNode(Node):
                 )
                 self.gt_initialized_logged = True
 
-        return d_cam - self.first_gt_rel_cam
+        gt_rel = d_cam - self.first_gt_rel_cam
+        if not self._valid_vec(gt_rel, self.max_abs_error_m):
+            self.get_logger().warn(
+                f"Scarto GT relativo non plausibile: [{gt_rel[0]}, {gt_rel[1]}]"
+            )
+            return None
+
+        return gt_rel
 
     def _class_allowed(self, class_name: Optional[str]) -> bool:
         if "*" in self.allowed_classes:
@@ -247,28 +348,39 @@ class TrajectoryMetricsNode(Node):
             if z_raw is None or center_xy is None or len(center_xy) != 2:
                 return None, None
 
-            try:
-                x_forward = float(z_raw) / 100.0
-                cx = float(center_xy[0])
-            except Exception:
+            z_val = self._finite_scalar(z_raw)
+            cx = self._finite_scalar(center_xy[0])
+
+            if z_val is None or cx is None:
                 return None, None
 
+            x_forward = z_val / 100.0
             y_lateral = ((cx - (self.image_width_px / 2.0)) * x_forward) / self.focal_px
+
+            if (
+                not self._valid_abs(x_forward, self.max_abs_estimate_m) or
+                not self._valid_abs(y_lateral, self.max_abs_estimate_m)
+            ):
+                return None, None
+
             return x_forward, y_lateral
 
         state = item.get("state", {})
         if not isinstance(state, dict):
             return None, None
 
-        x_m = state.get("x_m")
-        y_m = state.get("y_m")
+        x_m = self._finite_scalar(state.get("x_m"))
+        y_m = self._finite_scalar(state.get("y_m"))
         if x_m is None or y_m is None:
             return None, None
 
-        try:
-            return float(x_m), float(y_m)
-        except Exception:
+        if (
+            not self._valid_abs(x_m, self.max_abs_estimate_m) or
+            not self._valid_abs(y_m, self.max_abs_estimate_m)
+        ):
             return None, None
+
+        return x_m, y_m
 
     def _choose_target(self, items: List[Dict[str, Any]]) -> Optional[Tuple[int, Dict[str, Any]]]:
         if not items:
@@ -340,9 +452,14 @@ class TrajectoryMetricsNode(Node):
 
         est_centered = est_rel - self.first_est_raw
 
+        if not self._valid_vec(est_centered, self.max_abs_error_m):
+            return
+        if not self._valid_vec(gt_rel, self.max_abs_error_m):
+            return
+
         if self.rotation_gt_to_est is None:
-            norm_gt = np.linalg.norm(gt_rel)
-            norm_est = np.linalg.norm(est_centered)
+            norm_gt = self._safe_norm2(float(gt_rel[0]), float(gt_rel[1]))
+            norm_est = self._safe_norm2(float(est_centered[0]), float(est_centered[1]))
 
             if norm_gt > 1e-6 and norm_est > 1e-6:
                 ang_gt = math.atan2(gt_rel[1], gt_rel[0])
@@ -362,6 +479,9 @@ class TrajectoryMetricsNode(Node):
             return
 
         t_est = self._extract_stamp_from_json(data)
+        if not math.isfinite(t_est):
+            return
+
         gt_rel = self._compute_gt_relative_in_camera_frame(t_est)
         if gt_rel is None:
             return
@@ -377,6 +497,8 @@ class TrajectoryMetricsNode(Node):
             return
 
         est_raw = np.array([float(est_xy[0]), float(est_xy[1])], dtype=float)
+        if not self._valid_vec(est_raw, self.max_abs_estimate_m):
+            return
 
         if self.first_est_raw is None:
             self.first_est_raw = est_raw.copy()
@@ -386,10 +508,12 @@ class TrajectoryMetricsNode(Node):
             )
 
         est_centered = est_raw - self.first_est_raw
+        if not self._valid_vec(est_centered, self.max_abs_error_m):
+            return
 
         if self.rotation_gt_to_est is None:
-            norm_gt = np.linalg.norm(gt_rel)
-            norm_est = np.linalg.norm(est_centered)
+            norm_gt = self._safe_norm2(float(gt_rel[0]), float(gt_rel[1]))
+            norm_est = self._safe_norm2(float(est_centered[0]), float(est_centered[1]))
             if norm_gt > 1e-6 and norm_est > 1e-6:
                 ang_gt = math.atan2(gt_rel[1], gt_rel[0])
                 ang_est = math.atan2(est_centered[1], est_centered[0])
@@ -404,8 +528,16 @@ class TrajectoryMetricsNode(Node):
         else:
             gt_aligned = gt_rel.copy()
 
+        if not self._valid_vec(gt_aligned, self.max_abs_error_m):
+            return
+
         err = est_centered - gt_aligned
-        err_norm = float(np.linalg.norm(err))
+        if not self._valid_vec(err, self.max_abs_error_m):
+            return
+
+        err_norm = self._safe_norm2(float(err[0]), float(err[1]))
+        if not self._valid_abs(err_norm, self.max_abs_error_m):
+            return
 
         self.metric_samples.append(
             MetricSample(
@@ -440,14 +572,32 @@ class TrajectoryMetricsNode(Node):
         err_y = np.array([s.err_y for s in self.metric_samples], dtype=float)
         err_n = np.array([s.err_norm for s in self.metric_samples], dtype=float)
 
+        finite_mask = np.isfinite(err_x) & np.isfinite(err_y) & np.isfinite(err_n)
+        err_x = err_x[finite_mask]
+        err_y = err_y[finite_mask]
+        err_n = err_n[finite_mask]
+
+        if err_x.size == 0:
+            return {
+                "n_samples": 0,
+                "mae_x": float("nan"),
+                "mae_y": float("nan"),
+                "mae_norm": float("nan"),
+                "rmse_x": float("nan"),
+                "rmse_y": float("nan"),
+                "rmse_norm": float("nan"),
+                "final_error": float("nan"),
+                "max_error": float("nan"),
+            }
+
         return {
-            "n_samples": int(len(self.metric_samples)),
+            "n_samples": int(err_x.size),
             "mae_x": float(np.mean(np.abs(err_x))),
             "mae_y": float(np.mean(np.abs(err_y))),
             "mae_norm": float(np.mean(np.abs(err_n))),
-            "rmse_x": float(np.sqrt(np.mean(err_x ** 2))),
-            "rmse_y": float(np.sqrt(np.mean(err_y ** 2))),
-            "rmse_norm": float(np.sqrt(np.mean(err_n ** 2))),
+            "rmse_x": self._safe_rmse(err_x),
+            "rmse_y": self._safe_rmse(err_y),
+            "rmse_norm": self._safe_rmse(err_n),
             "final_error": float(err_n[-1]),
             "max_error": float(np.max(err_n)),
         }

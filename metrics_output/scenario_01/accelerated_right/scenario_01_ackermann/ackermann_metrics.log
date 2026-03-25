@@ -1,24 +1,45 @@
-[INFO] [1774349536.240538146] [trajectory_metrics_node]: TrajectoryMetricsNode ready
+[INFO] [1774434991.872970459] [trajectory_metrics_node]: TrajectoryMetricsNode ready
   stage: ackermann
   camera_gps_topic: /environment/GPS/GPSSDT/odom
   ambulance_gps_topic: /environment/GPS/GPSSDTAMBULANCE/odom
   estimation_topic: /ackermann_kf/tracks
-  target_track_id: -1
+  target_track_id: 1
   output_dir: /home/isarlab/ros2_humble/metrics_output/scenario_01/accelerated_right/scenario_01_ackermann
-[INFO] [1774349536.241870871] [trajectory_metrics_node]: GT inizializzata: first_gt_rel_cam = [95.952, 10.099]
-[INFO] [1774349536.242197482] [trajectory_metrics_node]: Target selezionato automaticamente: track_id=1
-[INFO] [1774349536.242498865] [trajectory_metrics_node]: Primo campione stima per target 1: [3.943, -0.817]
-[INFO] [1774349543.733890956] [trajectory_metrics_node]: Rotazione iniziale GT->stima fissata: 166.34 deg
-[INFO] [1774349564.509526783] [trajectory_metrics_node]: Salvati:
+  max_abs_pose_m: 10000.0
+  max_abs_estimate_m: 10000.0
+  max_abs_error_m: 10000.0
+[INFO] [1774434991.955283791] [trajectory_metrics_node]: GT inizializzata: first_gt_rel_cam = [95.942, 10.099]
+[INFO] [1774434991.955734816] [trajectory_metrics_node]: Primo campione stima per target 1: [3.934, -0.814]
+[WARN] [1774434995.282101394] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=9.53196408996653e-28, y=-5.316609648471509e+34
+[WARN] [1774434995.867946164] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=9.53196408996653e-28, y=-5.316609648471509e+34
+[INFO] [1774434997.791645994] [trajectory_metrics_node]: Rotazione iniziale GT->stima fissata: 180.00 deg
+[WARN] [1774435000.467131975] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=2.472180228081599e-26, y=5.453182729192263e+17
+[WARN] [1774435000.542435496] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114311190374796e+34, y=-1.8044418030322774e-40
+[WARN] [1774435000.544888777] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=2.472180228081599e-26, y=5.453182729192263e+17
+[WARN] [1774435000.630051830] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=2.472180228081599e-26, y=5.453182729192263e+17
+[WARN] [1774435000.711304305] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=2.472180228081599e-26, y=5.453182729192263e+17
+[WARN] [1774435000.926727377] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=2.472180228081599e-26, y=5.453182729192263e+17
+[WARN] [1774435005.025549868] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=2.472180228081599e-26, y=5.453182729192263e+17
+[WARN] [1774435009.620044981] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=2.472180228081599e-26, y=5.453182729192263e+17
+[WARN] [1774435013.171890617] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=3.295734644268552e-27, y=-5.316609648471509e+34
+[WARN] [1774435014.218732376] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=2.649499790711499e-27, y=-5.316609648471509e+34
+[WARN] [1774435014.426032312] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=2.472180228081599e-26, y=5.453182729192263e+17
+[WARN] [1774435014.973771522] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=2.1325750167382746e-27, y=-5.316609648471509e+34
+[WARN] [1774435017.073605717] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=1.4217166778255163e-27, y=-5.316609648471509e+34
+[WARN] [1774435018.174188866] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=1.0663190628053461e-27, y=-5.316609648471509e+34
+[WARN] [1774435018.825804604] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114078893402304e+34, y=-1.8044418030322774e-40
+[WARN] [1774435018.828150663] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=2.472180228081599e-26, y=5.453182729192263e+17
+[WARN] [1774435018.912828213] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=2.472180228081599e-26, y=5.453182729192263e+17
+[INFO] [1774435020.179193285] [trajectory_metrics_node]: Salvati:
   /home/isarlab/ros2_humble/metrics_output/scenario_01/accelerated_right/scenario_01_ackermann/ackermann_metrics_detail.csv
   /home/isarlab/ros2_humble/metrics_output/scenario_01/accelerated_right/scenario_01_ackermann/ackermann_metrics_summary.csv
   /home/isarlab/ros2_humble/metrics_output/scenario_01/accelerated_right/scenario_01_ackermann/ackermann_trajectory.png
   /home/isarlab/ros2_humble/metrics_output/scenario_01/accelerated_right/scenario_01_ackermann/ackermann_error.png
 Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
-[INFO] [1774349564.510485061] [trajectory_metrics_node]: Summary ackermann: target_id=1, n=240, MAE_norm=15285252739355589042408132412702720.000 m, RMSE_norm=28507143349235026715165375963594752.000 m, final_error=0.005 m, max_error=53166096484715098336662223732080640.000 m
+[INFO] [1774435020.179605301] [trajectory_metrics_node]: Summary ackermann: target_id=1, n=209, MAE_norm=1.018 m, RMSE_norm=1.379 m, final_error=0.012 m, max_error=3.750 m
 Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
 Traceback (most recent call last):
-  File "/home/isarlab/ros2_humble/build/trajectory_metrics/trajectory_metrics/trajectory_metrics_node.py", line 562, in main
+  File "/home/isarlab/ros2_humble/build/trajectory_metrics/trajectory_metrics/trajectory_metrics_node.py", line 712, in main
     rclpy.spin(node)
   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 229, in spin
     executor.spin_once()
@@ -36,8 +57,8 @@ During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
   File "/home/isarlab/ros2_humble/install/trajectory_metrics/lib/trajectory_metrics/trajectory_metrics_node", line 33, in <module>
-    sys.exit(load_entry_point('trajectory-metrics', 'console_scripts', 'trajectory_metrics_node')())
-  File "/home/isarlab/ros2_humble/build/trajectory_metrics/trajectory_metrics/trajectory_metrics_node.py", line 569, in main
+    sys.exit(load_entry_point('trajectory-metrics==0.0.1', 'console_scripts', 'trajectory_metrics_node')())
+  File "/home/isarlab/ros2_humble/build/trajectory_metrics/trajectory_metrics/trajectory_metrics_node.py", line 719, in main
     rclpy.shutdown()
   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 130, in shutdown
     _shutdown(context=context)

@@ -1,20 +1,20 @@
-[INFO] [launch]: All log files can be found below /home/isarlab/.ros/log/2026-03-24-11-48-27-400084-DESKTOP-PQ37J3S-29736
+[INFO] [launch]: All log files can be found below /home/isarlab/.ros/log/2026-03-25-11-32-45-862075-DESKTOP-PQ37J3S-32459
 [INFO] [launch]: Default logging verbosity is set to INFO
 [INFO] [launch.user]: [experiments] Stage selezionato: fusion
-[INFO] [yolo_detector-1]: process started with pid [29769]
-[INFO] [depth_yolo_fusion-2]: process started with pid [29771]
-[depth_yolo_fusion-2] [INFO] [1774349308.113121956] [depth_yolo_fusion_node]: Depth scale: 1.0 [m/unità]
-[depth_yolo_fusion-2] [INFO] [1774349308.113571153] [depth_yolo_fusion_node]: Depth topic: /environment/DepthCamera/DepthCameraSDT/image_raw
-[depth_yolo_fusion-2] [INFO] [1774349308.113874338] [depth_yolo_fusion_node]: Detections topic: yolo/detections
-[yolo_detector-1] [INFO] [1774349309.532912562] [YoloDetector]: YOLO tracking: ON (track=True)
-[yolo_detector-1] [INFO] [1774349309.534584973] [YoloDetector]: YoloDetectorNode inizializzato con:
+[INFO] [yolo_detector-1]: process started with pid [32486]
+[INFO] [depth_yolo_fusion-2]: process started with pid [32488]
+[depth_yolo_fusion-2] [INFO] [1774434766.592157307] [depth_yolo_fusion_node]: Depth scale: 1.0 [m/unità]
+[depth_yolo_fusion-2] [INFO] [1774434766.593138766] [depth_yolo_fusion_node]: Depth topic: /environment/DepthCamera/DepthCameraSDT/image_raw
+[depth_yolo_fusion-2] [INFO] [1774434766.593955286] [depth_yolo_fusion_node]: Detections topic: yolo/detections
+[yolo_detector-1] [INFO] [1774434768.030594299] [YoloDetector]: YOLO tracking: ON (track=True)
+[yolo_detector-1] [INFO] [1774434768.032146467] [YoloDetector]: YoloDetectorNode inizializzato con:
 [yolo_detector-1]   input_topic: /environment/RGBCamera/CameraSDT/image_raw
 [yolo_detector-1]   output_image_topic: yolo/annotated_image
 [yolo_detector-1]   output_detections_topic: yolo/detections
 [yolo_detector-1]   model_path: /home/isarlab/ros2_humble/install/yolo_detector/share/yolo_detector/models/yolov8n.pt
 [yolo_detector-1]   conf_threshold=0.25 | iou_threshold=0.45 | class_filter=[]
 [yolo_detector-1]   tracker_cfg: (default YOLO)
-[yolo_detector-1] [INFO] [1774349309.596248257] [YoloDetector]: Loaded Ultralytics YOLO from /home/isarlab/ros2_humble/install/yolo_detector/share/yolo_detector/models/yolov8n.pt
+[yolo_detector-1] [INFO] [1774434768.076398123] [YoloDetector]: Loaded Ultralytics YOLO from /home/isarlab/ros2_humble/install/yolo_detector/share/yolo_detector/models/yolov8n.pt
 [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
 [depth_yolo_fusion-2] Traceback (most recent call last):
 [depth_yolo_fusion-2]   File "/home/isarlab/ros2_humble/install/depth_yolo_fusion/lib/depth_yolo_fusion/depth_yolo_fusion", line 33, in <module>
@@ -61,5 +61,5 @@
 [yolo_detector-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/context.py", line 102, in shutdown
 [yolo_detector-1]     self.__context.shutdown()
 [yolo_detector-1] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:241
-[ERROR] [depth_yolo_fusion-2]: process has died [pid 29771, exit code -2, cmd '/home/isarlab/ros2_humble/install/depth_yolo_fusion/lib/depth_yolo_fusion/depth_yolo_fusion --ros-args -r __node:=depth_yolo_fusion_node --params-file /home/isarlab/ros2_humble/install/depth_yolo_fusion/share/depth_yolo_fusion/config/depth_yolo_fusion.yaml'].
-[ERROR] [yolo_detector-1]: process has died [pid 29769, exit code 1, cmd '/home/isarlab/ros2_humble/install/yolo_detector/lib/yolo_detector/yolo_detector --ros-args -r __node:=YoloDetector --params-file /tmp/launch_params_ti9sbm5k'].
+[ERROR] [depth_yolo_fusion-2]: process has died [pid 32488, exit code -2, cmd '/home/isarlab/ros2_humble/install/depth_yolo_fusion/lib/depth_yolo_fusion/depth_yolo_fusion --ros-args -r __node:=depth_yolo_fusion_node --params-file /home/isarlab/ros2_humble/install/depth_yolo_fusion/share/depth_yolo_fusion/config/depth_yolo_fusion.yaml'].
+[ERROR] [yolo_detector-1]: process has died [pid 32486, exit code 1, cmd '/home/isarlab/ros2_humble/install/yolo_detector/lib/yolo_detector/yolo_detector --ros-args -r __node:=YoloDetector --params-file /tmp/launch_params_37mrt01q'].

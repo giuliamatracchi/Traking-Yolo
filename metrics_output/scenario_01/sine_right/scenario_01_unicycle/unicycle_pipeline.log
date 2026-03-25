@@ -1,10 +1,10 @@
-[INFO] [launch]: All log files can be found below /home/isarlab/.ros/log/2026-03-24-11-49-09-369912-DESKTOP-PQ37J3S-30206
+[INFO] [launch]: All log files can be found below /home/isarlab/.ros/log/2026-03-25-11-33-27-801581-DESKTOP-PQ37J3S-32890
 [INFO] [launch]: Default logging verbosity is set to INFO
 [INFO] [launch.user]: [experiments] Stage selezionato: unicycle
-[INFO] [yolo_detector-1]: process started with pid [30235]
-[INFO] [depth_yolo_fusion-2]: process started with pid [30237]
-[INFO] [unicycle_kf_tracker-3]: process started with pid [30239]
-[unicycle_kf_tracker-3] [INFO] [1774349353.100870220] [unicycle_kf_tracker]: UnicycleKFTrackerNode ready
+[INFO] [yolo_detector-1]: process started with pid [32913]
+[INFO] [depth_yolo_fusion-2]: process started with pid [32915]
+[INFO] [unicycle_kf_tracker-3]: process started with pid [32917]
+[unicycle_kf_tracker-3] [INFO] [1774434808.296703523] [unicycle_kf_tracker]: UnicycleKFTrackerNode ready
 [unicycle_kf_tracker-3]   input_topic: yolo/detections_xyz
 [unicycle_kf_tracker-3]   output_topic: unicycle_kf/tracks
 [unicycle_kf_tracker-3]   image_width_px: 1280
@@ -12,18 +12,18 @@
 [unicycle_kf_tracker-3]   vehicle_width_m: 3.0
 [unicycle_kf_tracker-3]   max_yaw_rate_deg: 90.0
 [unicycle_kf_tracker-3]   focal_px: 640.00
-[depth_yolo_fusion-2] [INFO] [1774349353.116535368] [depth_yolo_fusion_node]: Depth scale: 1.0 [m/unità]
-[depth_yolo_fusion-2] [INFO] [1774349353.117357686] [depth_yolo_fusion_node]: Depth topic: /environment/DepthCamera/DepthCameraSDT/image_raw
-[depth_yolo_fusion-2] [INFO] [1774349353.117812802] [depth_yolo_fusion_node]: Detections topic: yolo/detections
-[yolo_detector-1] [INFO] [1774349354.440054603] [YoloDetector]: YOLO tracking: ON (track=True)
-[yolo_detector-1] [INFO] [1774349354.441548438] [YoloDetector]: YoloDetectorNode inizializzato con:
+[depth_yolo_fusion-2] [INFO] [1774434808.887836761] [depth_yolo_fusion_node]: Depth scale: 1.0 [m/unità]
+[depth_yolo_fusion-2] [INFO] [1774434808.888268732] [depth_yolo_fusion_node]: Depth topic: /environment/DepthCamera/DepthCameraSDT/image_raw
+[depth_yolo_fusion-2] [INFO] [1774434808.888585893] [depth_yolo_fusion_node]: Detections topic: yolo/detections
+[yolo_detector-1] [INFO] [1774434809.996696464] [YoloDetector]: YOLO tracking: ON (track=True)
+[yolo_detector-1] [INFO] [1774434809.998290340] [YoloDetector]: YoloDetectorNode inizializzato con:
 [yolo_detector-1]   input_topic: /environment/RGBCamera/CameraSDT/image_raw
 [yolo_detector-1]   output_image_topic: yolo/annotated_image
 [yolo_detector-1]   output_detections_topic: yolo/detections
 [yolo_detector-1]   model_path: /home/isarlab/ros2_humble/install/yolo_detector/share/yolo_detector/models/yolov8n.pt
 [yolo_detector-1]   conf_threshold=0.25 | iou_threshold=0.45 | class_filter=[]
 [yolo_detector-1]   tracker_cfg: (default YOLO)
-[yolo_detector-1] [INFO] [1774349354.482239687] [YoloDetector]: Loaded Ultralytics YOLO from /home/isarlab/ros2_humble/install/yolo_detector/share/yolo_detector/models/yolov8n.pt
+[yolo_detector-1] [INFO] [1774434810.043897908] [YoloDetector]: Loaded Ultralytics YOLO from /home/isarlab/ros2_humble/install/yolo_detector/share/yolo_detector/models/yolov8n.pt
 [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
 [depth_yolo_fusion-2] Traceback (most recent call last):
 [depth_yolo_fusion-2]   File "/home/isarlab/ros2_humble/install/depth_yolo_fusion/lib/depth_yolo_fusion/depth_yolo_fusion", line 33, in <module>
@@ -48,36 +48,12 @@
 [yolo_detector-1]     executor.spin_once()
 [yolo_detector-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 751, in spin_once
 [yolo_detector-1]     self._spin_once_impl(timeout_sec)
-[yolo_detector-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 746, in _spin_once_impl
-[yolo_detector-1]     handler()
-[yolo_detector-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/task.py", line 254, in __call__
-[yolo_detector-1]     self._handler.send(None)
-[yolo_detector-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 447, in handler
-[yolo_detector-1]     await call_coroutine(entity, arg)
-[yolo_detector-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 372, in _execute_subscription
-[yolo_detector-1]     await await_or_execute(sub.callback, msg)
-[yolo_detector-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 107, in await_or_execute
-[yolo_detector-1]     return callback(*args)
-[yolo_detector-1]   File "/home/isarlab/ros2_humble/install/yolo_detector/lib/python3.10/site-packages/yolo_detector/yolo_detector_node.py", line 141, in image_callback
-[yolo_detector-1]     dets, annotated = self._infer_ultralytics_track(frame)
-[yolo_detector-1]   File "/home/isarlab/ros2_humble/install/yolo_detector/lib/python3.10/site-packages/yolo_detector/yolo_detector_node.py", line 231, in _infer_ultralytics_track
-[yolo_detector-1]     results = self.model.track(**track_args)
-[yolo_detector-1]   File "/home/isarlab/.local/lib/python3.10/site-packages/ultralytics/engine/model.py", line 601, in track
-[yolo_detector-1]     return self.predict(source=source, stream=stream, **kwargs)
-[yolo_detector-1]   File "/home/isarlab/.local/lib/python3.10/site-packages/ultralytics/engine/model.py", line 557, in predict
-[yolo_detector-1]     return self.predictor.predict_cli(source=source) if is_cli else self.predictor(source=source, stream=stream)
-[yolo_detector-1]   File "/home/isarlab/.local/lib/python3.10/site-packages/ultralytics/engine/predictor.py", line 230, in __call__
-[yolo_detector-1]     return list(self.stream_inference(source, model, *args, **kwargs))  # merge list of Result into one
-[yolo_detector-1]   File "/home/isarlab/.local/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 38, in generator_context
-[yolo_detector-1]     response = gen.send(None)
-[yolo_detector-1]   File "/home/isarlab/.local/lib/python3.10/site-packages/ultralytics/engine/predictor.py", line 344, in stream_inference
-[yolo_detector-1]     self.results = self.postprocess(preds, im, im0s)
-[yolo_detector-1]   File "/home/isarlab/.local/lib/python3.10/site-packages/ultralytics/models/yolo/detect/predict.py", line 56, in postprocess
-[yolo_detector-1]     preds = nms.non_max_suppression(
-[yolo_detector-1]   File "/home/isarlab/.local/lib/python3.10/site-packages/ultralytics/utils/nms.py", line 157, in non_max_suppression
-[yolo_detector-1]     i = TorchNMS.nms(boxes, scores, iou_thres)
-[yolo_detector-1]   File "/home/isarlab/.local/lib/python3.10/site-packages/ultralytics/utils/nms.py", line 271, in nms
-[yolo_detector-1]     while order.numel() > 0:
+[yolo_detector-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 740, in _spin_once_impl
+[yolo_detector-1]     handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+[yolo_detector-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 723, in wait_for_ready_callbacks
+[yolo_detector-1]     return next(self._cb_iter)
+[yolo_detector-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 620, in _wait_for_ready_callbacks
+[yolo_detector-1]     wait_set.wait(timeout_nsec)
 [yolo_detector-1] KeyboardInterrupt
 [yolo_detector-1] 
 [yolo_detector-1] During handling of the above exception, another exception occurred:
@@ -123,6 +99,6 @@
 [unicycle_kf_tracker-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/context.py", line 102, in shutdown
 [unicycle_kf_tracker-3]     self.__context.shutdown()
 [unicycle_kf_tracker-3] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:241
-[ERROR] [depth_yolo_fusion-2]: process has died [pid 30237, exit code -2, cmd '/home/isarlab/ros2_humble/install/depth_yolo_fusion/lib/depth_yolo_fusion/depth_yolo_fusion --ros-args -r __node:=depth_yolo_fusion_node --params-file /home/isarlab/ros2_humble/install/depth_yolo_fusion/share/depth_yolo_fusion/config/depth_yolo_fusion.yaml'].
-[ERROR] [unicycle_kf_tracker-3]: process has died [pid 30239, exit code 1, cmd '/home/isarlab/ros2_humble/install/unicycle_kf_tracker/lib/unicycle_kf_tracker/unicycle_kf_tracker --ros-args -r __node:=unicycle_kf_tracker --params-file /home/isarlab/ros2_humble/install/unicycle_kf_tracker/share/unicycle_kf_tracker/config/unicycle_kf_tracker.yaml'].
-[ERROR] [yolo_detector-1]: process has died [pid 30235, exit code 1, cmd '/home/isarlab/ros2_humble/install/yolo_detector/lib/yolo_detector/yolo_detector --ros-args -r __node:=YoloDetector --params-file /tmp/launch_params_o6wbydkd'].
+[ERROR] [depth_yolo_fusion-2]: process has died [pid 32915, exit code -2, cmd '/home/isarlab/ros2_humble/install/depth_yolo_fusion/lib/depth_yolo_fusion/depth_yolo_fusion --ros-args -r __node:=depth_yolo_fusion_node --params-file /home/isarlab/ros2_humble/install/depth_yolo_fusion/share/depth_yolo_fusion/config/depth_yolo_fusion.yaml'].
+[ERROR] [unicycle_kf_tracker-3]: process has died [pid 32917, exit code 1, cmd '/home/isarlab/ros2_humble/install/unicycle_kf_tracker/lib/unicycle_kf_tracker/unicycle_kf_tracker --ros-args -r __node:=unicycle_kf_tracker --params-file /home/isarlab/ros2_humble/install/unicycle_kf_tracker/share/unicycle_kf_tracker/config/unicycle_kf_tracker.yaml'].
+[ERROR] [yolo_detector-1]: process has died [pid 32913, exit code 1, cmd '/home/isarlab/ros2_humble/install/yolo_detector/lib/yolo_detector/yolo_detector --ros-args -r __node:=YoloDetector --params-file /tmp/launch_params_w22tqg18'].

@@ -1,10 +1,10 @@
-[INFO] [launch]: All log files can be found below /home/isarlab/.ros/log/2026-03-24-11-52-04-617004-DESKTOP-PQ37J3S-32086
+[INFO] [launch]: All log files can be found below /home/isarlab/.ros/log/2026-03-25-11-36-23-166824-DESKTOP-PQ37J3S-34807
 [INFO] [launch]: Default logging verbosity is set to INFO
 [INFO] [launch.user]: [experiments] Stage selezionato: ackermann
-[INFO] [yolo_detector-1]: process started with pid [32109]
-[INFO] [depth_yolo_fusion-2]: process started with pid [32111]
-[INFO] [ackermann_kf_tracker-3]: process started with pid [32113]
-[ackermann_kf_tracker-3] [INFO] [1774349525.085910563] [ackermann_kf_tracker]: AckermannKFTrackerNode ready
+[INFO] [yolo_detector-1]: process started with pid [34829]
+[INFO] [depth_yolo_fusion-2]: process started with pid [34831]
+[INFO] [ackermann_kf_tracker-3]: process started with pid [34833]
+[ackermann_kf_tracker-3] [INFO] [1774434983.618028926] [ackermann_kf_tracker]: AckermannKFTrackerNode ready
 [ackermann_kf_tracker-3]   input_topic: yolo/detections_xyz
 [ackermann_kf_tracker-3]   output_topic: ackermann_kf/tracks
 [ackermann_kf_tracker-3]   image_width_px: 1280
@@ -15,18 +15,18 @@
 [ackermann_kf_tracker-3]   wheelbase_m: 1.5
 [ackermann_kf_tracker-3]   max_steer_deg: 35.0
 [ackermann_kf_tracker-3]   focal_px: 640.00
-[depth_yolo_fusion-2] [INFO] [1774349525.355536614] [depth_yolo_fusion_node]: Depth scale: 1.0 [m/unità]
-[depth_yolo_fusion-2] [INFO] [1774349525.356500763] [depth_yolo_fusion_node]: Depth topic: /environment/DepthCamera/DepthCameraSDT/image_raw
-[depth_yolo_fusion-2] [INFO] [1774349525.357246943] [depth_yolo_fusion_node]: Detections topic: yolo/detections
-[yolo_detector-1] [INFO] [1774349529.736345982] [YoloDetector]: YOLO tracking: ON (track=True)
-[yolo_detector-1] [INFO] [1774349529.738338256] [YoloDetector]: YoloDetectorNode inizializzato con:
+[depth_yolo_fusion-2] [INFO] [1774434983.889897902] [depth_yolo_fusion_node]: Depth scale: 1.0 [m/unità]
+[depth_yolo_fusion-2] [INFO] [1774434983.890380158] [depth_yolo_fusion_node]: Depth topic: /environment/DepthCamera/DepthCameraSDT/image_raw
+[depth_yolo_fusion-2] [INFO] [1774434983.890698852] [depth_yolo_fusion_node]: Detections topic: yolo/detections
+[yolo_detector-1] [INFO] [1774434985.368800010] [YoloDetector]: YOLO tracking: ON (track=True)
+[yolo_detector-1] [INFO] [1774434985.371221164] [YoloDetector]: YoloDetectorNode inizializzato con:
 [yolo_detector-1]   input_topic: /environment/RGBCamera/CameraSDT/image_raw
 [yolo_detector-1]   output_image_topic: yolo/annotated_image
 [yolo_detector-1]   output_detections_topic: yolo/detections
 [yolo_detector-1]   model_path: /home/isarlab/ros2_humble/install/yolo_detector/share/yolo_detector/models/yolov8n.pt
 [yolo_detector-1]   conf_threshold=0.25 | iou_threshold=0.45 | class_filter=[]
 [yolo_detector-1]   tracker_cfg: (default YOLO)
-[yolo_detector-1] [INFO] [1774349529.791483404] [YoloDetector]: Loaded Ultralytics YOLO from /home/isarlab/ros2_humble/install/yolo_detector/share/yolo_detector/models/yolov8n.pt
+[yolo_detector-1] [INFO] [1774434985.422049008] [YoloDetector]: Loaded Ultralytics YOLO from /home/isarlab/ros2_humble/install/yolo_detector/share/yolo_detector/models/yolov8n.pt
 [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
 [depth_yolo_fusion-2] Traceback (most recent call last):
 [depth_yolo_fusion-2]   File "/home/isarlab/ros2_humble/install/depth_yolo_fusion/lib/depth_yolo_fusion/depth_yolo_fusion", line 33, in <module>
@@ -102,6 +102,6 @@
 [ackermann_kf_tracker-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/context.py", line 102, in shutdown
 [ackermann_kf_tracker-3]     self.__context.shutdown()
 [ackermann_kf_tracker-3] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:241
-[ERROR] [depth_yolo_fusion-2]: process has died [pid 32111, exit code -2, cmd '/home/isarlab/ros2_humble/install/depth_yolo_fusion/lib/depth_yolo_fusion/depth_yolo_fusion --ros-args -r __node:=depth_yolo_fusion_node --params-file /home/isarlab/ros2_humble/install/depth_yolo_fusion/share/depth_yolo_fusion/config/depth_yolo_fusion.yaml'].
-[ERROR] [ackermann_kf_tracker-3]: process has died [pid 32113, exit code 1, cmd '/home/isarlab/ros2_humble/install/ackermann_kf_tracker/lib/ackermann_kf_tracker/ackermann_kf_tracker --ros-args -r __node:=ackermann_kf_tracker --params-file /home/isarlab/ros2_humble/install/ackermann_kf_tracker/share/ackermann_kf_tracker/config/ackermann_kf_tracker.yaml'].
-[ERROR] [yolo_detector-1]: process has died [pid 32109, exit code 1, cmd '/home/isarlab/ros2_humble/install/yolo_detector/lib/yolo_detector/yolo_detector --ros-args -r __node:=YoloDetector --params-file /tmp/launch_params_vja2xf95'].
+[ERROR] [depth_yolo_fusion-2]: process has died [pid 34831, exit code -2, cmd '/home/isarlab/ros2_humble/install/depth_yolo_fusion/lib/depth_yolo_fusion/depth_yolo_fusion --ros-args -r __node:=depth_yolo_fusion_node --params-file /home/isarlab/ros2_humble/install/depth_yolo_fusion/share/depth_yolo_fusion/config/depth_yolo_fusion.yaml'].
+[ERROR] [ackermann_kf_tracker-3]: process has died [pid 34833, exit code 1, cmd '/home/isarlab/ros2_humble/install/ackermann_kf_tracker/lib/ackermann_kf_tracker/ackermann_kf_tracker --ros-args -r __node:=ackermann_kf_tracker --params-file /home/isarlab/ros2_humble/install/ackermann_kf_tracker/share/ackermann_kf_tracker/config/ackermann_kf_tracker.yaml'].
+[ERROR] [yolo_detector-1]: process has died [pid 34829, exit code 1, cmd '/home/isarlab/ros2_humble/install/yolo_detector/lib/yolo_detector/yolo_detector --ros-args -r __node:=YoloDetector --params-file /tmp/launch_params_nznp14u2'].
