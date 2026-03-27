@@ -354,7 +354,7 @@ class TrajectoryMetricsNode(Node):
             if z_val is None or cx is None:
                 return None, None
 
-            x_forward = z_val / 100.0
+            x_forward = z_val
             y_lateral = ((cx - (self.image_width_px / 2.0)) * x_forward) / self.focal_px
 
             if (

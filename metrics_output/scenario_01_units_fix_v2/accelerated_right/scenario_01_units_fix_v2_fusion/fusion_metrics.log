@@ -1,0 +1,96 @@
+[INFO] [1774609673.219091731] [trajectory_metrics_node]: TrajectoryMetricsNode ready
+  stage: fusion
+  camera_gps_topic: /environment/GPS/GPSSDT/odom
+  ambulance_gps_topic: /environment/GPS/GPSSDTAMBULANCE/odom
+  estimation_topic: /yolo/detections_xyz
+  target_track_id: 1
+  output_dir: /home/isarlab/ros2_humble/metrics_output/scenario_01_units_fix_v2/accelerated_right/scenario_01_units_fix_v2_fusion
+  max_abs_pose_m: 10000.0
+  max_abs_estimate_m: 10000.0
+  max_abs_error_m: 10000.0
+[INFO] [1774609673.222145293] [trajectory_metrics_node]: GT inizializzata: first_gt_rel_cam = [99.692, 30.099]
+[INFO] [1774609673.222630445] [trajectory_metrics_node]: Primo campione stima per target 1: [0.000, -0.000]
+[WARN] [1774609675.278825506] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609675.437567867] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609675.529244365] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[INFO] [1774609676.198531821] [trajectory_metrics_node]: Rotazione iniziale GT->stima fissata: 76.56 deg
+[WARN] [1774609679.820990464] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=4.250003904096306e-26, y=-5.316609648471509e+34
+[WARN] [1774609685.037570100] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609685.132587221] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609685.829416385] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609686.224807282] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609687.277367966] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114204390811727e+34, y=-1.8044418030322774e-40
+[WARN] [1774609687.280981839] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609687.443627517] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1142018555105263e+34, y=-1.8044418030322774e-40
+[WARN] [1774609687.445850268] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609687.534876902] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609687.620741631] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609687.826416274] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609688.324309924] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609689.429899113] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609689.628553572] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609689.924610960] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609690.929014958] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609691.530661759] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609691.729989615] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609691.943707555] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114144811233516e+34, y=-1.8044418030322774e-40
+[WARN] [1774609691.945913613] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609692.038674323] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609692.135158100] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609692.226949099] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609692.726933055] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609693.826943725] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609696.030664703] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609696.134807789] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609696.228546459] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609696.543622014] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1140864993059055e+34, y=-1.8044418030322774e-40
+[WARN] [1774609696.545595080] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609696.632042326] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609696.726721699] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609699.327589368] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609700.037090018] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609700.120871265] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609700.931535298] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609701.063350665] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114077625751704e+34, y=-1.8044418030322774e-40
+[WARN] [1774609701.065383197] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609701.144147812] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114077625751704e+34, y=-1.8044418030322774e-40
+[WARN] [1774609701.146154991] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[WARN] [1774609701.238845659] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-1.6204833968840926e-21, y=-1.3957831810623817e+20
+[INFO] [1774609701.712350483] [trajectory_metrics_node]: Salvati:
+  /home/isarlab/ros2_humble/metrics_output/scenario_01_units_fix_v2/accelerated_right/scenario_01_units_fix_v2_fusion/fusion_metrics_detail.csv
+  /home/isarlab/ros2_humble/metrics_output/scenario_01_units_fix_v2/accelerated_right/scenario_01_units_fix_v2_fusion/fusion_metrics_summary.csv
+  /home/isarlab/ros2_humble/metrics_output/scenario_01_units_fix_v2/accelerated_right/scenario_01_units_fix_v2_fusion/fusion_trajectory.png
+  /home/isarlab/ros2_humble/metrics_output/scenario_01_units_fix_v2/accelerated_right/scenario_01_units_fix_v2_fusion/fusion_error.png
+Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
+[INFO] [1774609701.712762560] [trajectory_metrics_node]: Summary fusion: target_id=1, n=229, MAE_norm=17.345 m, RMSE_norm=18.384 m, final_error=20.349 m, max_error=20.349 m
+Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
+Traceback (most recent call last):
+  File "/home/isarlab/ros2_humble/install/trajectory_metrics/lib/python3.10/site-packages/trajectory_metrics/trajectory_metrics_node.py", line 712, in main
+    rclpy.spin(node)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 229, in spin
+    executor.spin_once()
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 751, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 740, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 723, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 620, in _wait_for_ready_callbacks
+    wait_set.wait(timeout_nsec)
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/isarlab/ros2_humble/install/trajectory_metrics/lib/trajectory_metrics/trajectory_metrics_node", line 33, in <module>
+    sys.exit(load_entry_point('trajectory-metrics==0.0.1', 'console_scripts', 'trajectory_metrics_node')())
+  File "/home/isarlab/ros2_humble/install/trajectory_metrics/lib/python3.10/site-packages/trajectory_metrics/trajectory_metrics_node.py", line 719, in main
+    rclpy.shutdown()
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 130, in shutdown
+    _shutdown(context=context)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/utilities.py", line 58, in shutdown
+    return context.shutdown()
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/context.py", line 102, in shutdown
+    self.__context.shutdown()
+rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:241
+[ros2run]: Process exited with failure 1

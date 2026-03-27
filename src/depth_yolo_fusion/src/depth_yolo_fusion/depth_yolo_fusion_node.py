@@ -35,8 +35,9 @@ class DepthYoloFusionNode(Node):
         self.declare_parameter('max_sync_dt_sec', 0.1)   # non usato ora, ma lasciato
         self.declare_parameter('viz_auto_scale', True)
         self.declare_parameter('viz_max_depth_m', 200.0)
-        # nel tuo caso image_raw è 32FC1 in metri → scala = 1.0
-        self.declare_parameter('depth_scale', 1.0)
+        
+        #nel setup attaule image_raw è 32FC1 ma i valori reali sono in centimetri --< convertiam subito in metri per avere unità SI coerenti in tutta la pipeline
+        self.declare_parameter('depth_scale', 0.01)
 
         self.depth_topic = self.get_parameter(
             'depth_topic'
@@ -132,11 +133,10 @@ class DepthYoloFusionNode(Node):
         except CvBridgeError:
             return
 
-        # CONVERSIONE A float32 in metri
-        if np.issubdtype(depth_np.dtype, np.integer):
-            depth_np = depth_np.astype(np.float32) * self.depth_scale
-        else:
-            depth_np = depth_np.astype(np.float32)
+        # CONVERSIONE A float32 e applicazione scala (cm → m nel nostro caso)
+        depth_np = depth_np.astype(np.float32) * self.depth_scale
+
+
 
         depth_np = np.nan_to_num(
             depth_np,

@@ -305,7 +305,7 @@ class UnicycleKFTrackerNode(Node):
             return None
 
         try:
-            z_m = float(z_raw) / 100.0
+            z_m = float(z_raw) 
         except Exception:
             return None
 

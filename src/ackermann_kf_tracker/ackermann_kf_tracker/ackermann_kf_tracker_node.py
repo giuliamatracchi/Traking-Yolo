@@ -348,7 +348,7 @@ class AckermannKFTrackerNode(Node):
 
         try:
             # depth_yolo_fusion pubblica già z_m in metri
-            z_m = float(z_raw) / 100.0
+            z_m = float(z_raw)
         except Exception:
             return None
 
