@@ -34,6 +34,9 @@ class Environment(Node):
         self.declare_parameter('address', params_from_yaml.get('address', ''))
         self.declare_parameter('port', params_from_yaml.get('port', 0))
         self.declare_parameter('fps', 10.0)  # fps resta nel codice
+        self.declare_parameter('motion_speed_mps', 0.5)
+        self.declare_parameter('position_tolerance_m', 0.05)
+
     
         
 
@@ -41,6 +44,11 @@ class Environment(Node):
         address = self.get_parameter('address').value
         port = int(self.get_parameter('port').value)
         self.fps = float(self.get_parameter('fps').value)
+        self.motion_speed_mps = float(self.get_parameter('motion_speed_mps').value)
+        self.position_tolerance_m = float(self.get_parameter('position_tolerance_m').value)
+
+
+
         setup = params_from_yaml.get("setup", {}) if isinstance(params_from_yaml.get("setup", {}), dict) else {} #legge la sottoezione setup, si assicura che sia un dict, altrimenti usa un dict vuoto
 
         #check per controllo parametri mancanti
@@ -78,6 +86,12 @@ class Environment(Node):
         self.action_type = "MOVETO"
         self.des_pose = None
         self.des_orientation = None
+        
+
+        self.current_cmd_pose = None
+        self.current_cmd_orientation = None
+        self.last_action_time = time.perf_counter()
+
         self.action_sub = self.create_subscription(PoseStamped, "/ambulance_position_des", self.update_des_pose, 10)
         self.action_manager_timer = self.create_timer(0.1, self.action_manager_callback)
         
@@ -93,15 +107,46 @@ class Environment(Node):
             self.get_logger().warning(f"Impossibile registrare on_shutdown: {e}")
       
 
+    
     def update_des_pose(self, data):
-        self.des_pose = np.array([data.pose.position.x, data.pose.position.y, data.pose.position.z])
-        self.des_orientation = np.array([data.pose.orientation.x, data.pose.orientation.y, data.pose.orientation.z, data.pose.orientation.w])
+        self.des_pose = np.array([data.pose.position.x, data.pose.position.y, data.pose.position.z],dtype=float)
+        self.des_orientation = np.array([data.pose.orientation.x, data.pose.orientation.y, data.pose.orientation.z, data.pose.orientation.w,], dtype=float)
+
 
 
     def action_manager_callback(self):
-        if self.des_pose is not None and self.des_orientation is not None:
-            action = list(np.concatenate([self.des_pose, self.des_orientation]) * 100)
-            self.ue_env.perform_action(self.action_manager, {self.action_type: action})
+        if self.des_pose is None or self.des_orientation is None:
+            return
+
+        now = time.perf_counter()
+        dt = max(1e-3, now - self.last_action_time)
+        self.last_action_time = now
+
+        # Inizializzazione: al primo comando parto dalla posa target corrente
+        # per evitare salti dovuti a stato non inizializzato.
+        if self.current_cmd_pose is None or self.current_cmd_orientation is None:
+            self.current_cmd_pose = self.des_pose.copy()
+            self.current_cmd_orientation = self.des_orientation.copy()
+
+        delta = self.des_pose - self.current_cmd_pose
+        dist = np.linalg.norm(delta)
+
+        if dist > self.position_tolerance_m:
+            max_step = self.motion_speed_mps * dt
+            step = min(max_step, dist)
+            direction = delta / dist
+            self.current_cmd_pose = self.current_cmd_pose + direction * step
+        else:
+            self.current_cmd_pose = self.des_pose.copy()
+
+        # Orientazione: per ora la manteniamo uguale al target ricevuto
+        # senza fare slerp, così teniamo la modifica semplice.
+        self.current_cmd_orientation = self.des_orientation.copy()
+
+        action = list(np.concatenate([self.current_cmd_pose, self.current_cmd_orientation]) * 100.0)
+        self.ue_env.perform_action(self.action_manager, {self.action_type: action})
+
+
 
     # Costruzione sensori
     def build_sensors(self, sensors_used=None, settings_dir=None, env_topic=None):
