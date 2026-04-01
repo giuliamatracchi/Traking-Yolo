@@ -1,361 +1,146 @@
-[INFO] [1775036625.681317031] [trajectory_metrics_node]: TrajectoryMetricsNode ready
+[INFO] [1775038136.011087441] [trajectory_metrics_node]: TrajectoryMetricsNode ready
   stage: fusion
   camera_gps_topic: /environment/GPS/GPSSDT/odom
   ambulance_gps_topic: /environment/GPS/GPSSDTAMBULANCE/odom
   estimation_topic: /yolo/detections_xyz
   target_track_id: 1
   output_dir: /home/isarlab/ros2_humble/metrics_output/esperimento_01/straight_right/esperimento_01_fusion
-  max_abs_pose_m: 500.0
-  max_abs_estimate_m: 200.0
-  max_abs_error_m: 200.0
-  max_pose_step_m: 1.5
-  max_pose_speed_mps: 8.0
-  max_yaw_rate_rps: 1.5
-[INFO] [1775036625.734129728] [trajectory_metrics_node]: GT inizializzata: first_gt_rel_cam = [-0.008, 0.000]
-[INFO] [1775036625.734813864] [trajectory_metrics_node]: Primo campione stima per target 1: [3.835, -2.996]
-[WARN] [1775036628.523728143] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036628.620300725] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1145529947267896e+34, y=-1.8044418030322774e-40
-[WARN] [1775036628.621463183] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036628.723048967] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1145529947267896e+34, y=-1.8044418030322774e-40
-[WARN] [1775036628.724308353] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036628.826321133] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1145529947267896e+34, y=-1.8044418030322774e-40
-[WARN] [1775036628.827471021] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036628.914546416] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=100.210m, x=99.7, y=10.099997558593751
-[WARN] [1775036628.915577960] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036629.023765691] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1145529947267896e+34, y=-1.8044418030322774e-40
-[WARN] [1775036629.024985780] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036629.133157913] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=100.210m, x=99.7, y=10.099997558593751
-[WARN] [1775036629.221198030] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1145529947267896e+34, y=-1.8044418030322774e-40
-[WARN] [1775036629.222396175] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036629.321815686] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1145529947267896e+34, y=-1.8044418030322774e-40
-[WARN] [1775036629.323173305] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036629.416526860] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1145529947267896e+34, y=-1.8044418030322774e-40
-[WARN] [1775036629.418613158] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036629.514374963] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1145529947267896e+34, y=-1.8044418030322774e-40
-[WARN] [1775036629.515649514] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036629.613770740] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114552677814139e+34, y=-1.8044418030322774e-40
-[WARN] [1775036629.614858117] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036629.715475092] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114540318220787e+34, y=-1.8044418030322774e-40
-[WARN] [1775036629.716750298] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036629.814879956] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=100.011m, x=99.499990234375, y=10.099997558593751
-[WARN] [1775036629.917407255] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1145149652087823e+34, y=-1.8044418030322774e-40
-[WARN] [1775036629.918579185] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036630.012076961] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1145019717901303e+34, y=-1.8044418030322774e-40
-[WARN] [1775036630.013355965] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036630.117360773] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=99.713m, x=99.19999023437501, y=10.099997558593751
-[WARN] [1775036630.219881567] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1144769356907756e+34, y=-1.8044418030322774e-40
-[WARN] [1775036630.221425013] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036630.318035742] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114463942272123e+34, y=-1.8044418030322774e-40
-[WARN] [1775036630.319116237] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036630.412322735] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114451582678771e+34, y=-1.8044418030322774e-40
-[WARN] [1775036630.413422321] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036630.519753702] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=99.315m, x=98.79998046875001, y=10.099997558593751
-[WARN] [1775036630.615915994] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1144259127541164e+34, y=-1.8044418030322774e-40
-[WARN] [1775036630.617122148] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036630.716759639] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114413553160764e+34, y=-1.8044418030322774e-40
-[WARN] [1775036630.717866387] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036630.823166156] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114400876654762e+34, y=-1.8044418030322774e-40
-[WARN] [1775036630.824475625] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036630.917205060] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1143882001487595e+34, y=-1.8044418030322774e-40
-[WARN] [1775036630.918278580] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036631.017453427] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1143752067301075e+34, y=-1.8044418030322774e-40
-[WARN] [1775036631.018432010] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036631.115858858] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1143628471367553e+34, y=-1.8044418030322774e-40
-[WARN] [1775036631.117224624] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036631.223742226] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114349853718103e+34, y=-1.8044418030322774e-40
-[WARN] [1775036631.224924113] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036631.310950691] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=98.519m, x=98.00001953125, y=10.099997558593751
-[WARN] [1775036631.430685064] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114324500706098e+34, y=-1.8044418030322774e-40
-[WARN] [1775036631.431748723] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036631.537678216] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114311824200096e+34, y=-1.8044418030322774e-40
-[WARN] [1775036631.538684855] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036631.619868591] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1142991476940936e+34, y=-1.8044418030322774e-40
-[WARN] [1775036631.620965678] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036631.719266916] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=98.121m, x=97.60000000000001, y=10.099997558593751
-[WARN] [1775036631.720439779] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036631.816853721] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1142741115947392e+34, y=-1.8044418030322774e-40
-[WARN] [1775036631.820216337] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036631.914725062] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114261118176087e+34, y=-1.8044418030322774e-40
-[WARN] [1775036631.915801619] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036632.020783803] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1142487585827346e+34, y=-1.8044418030322774e-40
-[WARN] [1775036632.021858461] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036632.122083730] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114235765164082e+34, y=-1.8044418030322774e-40
-[WARN] [1775036632.123093347] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036632.218062240] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.11422308865808e+34, y=-1.8044418030322774e-40
-[WARN] [1775036632.219085380] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036632.318598273] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114210729064728e+34, y=-1.8044418030322774e-40
-[WARN] [1775036632.320202671] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036632.462236652] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1141980525587253e+34, y=-1.8044418030322774e-40
-[WARN] [1775036632.463419339] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036632.547351713] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=97.226m, x=96.69999023437501, y=10.099997558593751
-[WARN] [1775036632.640638456] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1141723826340707e+34, y=-1.8044418030322774e-40
-[WARN] [1775036632.641836225] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036632.733562784] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1141597061280686e+34, y=-1.8044418030322774e-40
-[WARN] [1775036632.734738704] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036632.821163253] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1141473465347164e+34, y=-1.8044418030322774e-40
-[WARN] [1775036632.822282882] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036632.923847828] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114134670028714e+34, y=-1.8044418030322774e-40
-[WARN] [1775036632.924864852] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036633.022821180] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1141219935227118e+34, y=-1.8044418030322774e-40
-[WARN] [1775036633.023849489] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036633.113931782] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1141093170167097e+34, y=-1.8044418030322774e-40
-[WARN] [1775036633.114921036] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036633.224339927] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114096640510707e+34, y=-1.8044418030322774e-40
-[WARN] [1775036633.225375095] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036633.322972484] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1140836470920547e+34, y=-1.8044418030322774e-40
-[WARN] [1775036633.323992230] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036633.420694348] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=96.430m, x=95.9, y=10.099997558593751
-[WARN] [1775036633.524957664] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1140586109927004e+34, y=-1.8044418030322774e-40
-[WARN] [1775036633.525952615] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036633.615482351] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1140459344866983e+34, y=-1.8044418030322774e-40
-[WARN] [1775036633.616639199] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036633.741534342] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1140332579806957e+34, y=-1.8044418030322774e-40
-[WARN] [1775036633.742576785] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036633.818510159] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=96.033m, x=95.499970703125, y=10.099997558593751
-[WARN] [1775036633.819531123] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036633.927306666] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114007588056041e+34, y=-1.8044418030322774e-40
-[WARN] [1775036633.928311533] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036634.019968754] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113994911550039e+34, y=-1.8044418030322774e-40
-[WARN] [1775036634.021287162] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036634.126964448] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113982551956687e+34, y=-1.8044418030322774e-40
-[WARN] [1775036634.127919753] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036634.215932192] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1139698754506843e+34, y=-1.8044418030322774e-40
-[WARN] [1775036634.217027781] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036634.323511057] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=95.535m, x=94.99986328125, y=10.099997558593751
-[WARN] [1775036634.418594761] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=95.436m, x=94.9, y=10.099997558593751
-[WARN] [1775036634.518364918] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=95.336m, x=94.799873046875, y=10.099997558593751
-[WARN] [1775036634.620564822] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113918852514025e+34, y=-1.8044418030322774e-40
-[WARN] [1775036634.621811768] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036634.719505160] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113906176008023e+34, y=-1.8044418030322774e-40
-[WARN] [1775036634.720612560] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036634.836407648] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1138934995020204e+34, y=-1.8044418030322774e-40
-[WARN] [1775036634.837443297] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036634.924607815] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1138808229960183e+34, y=-1.8044418030322774e-40
-[WARN] [1775036634.925826033] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036635.022986112] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1138681464900162e+34, y=-1.8044418030322774e-40
-[WARN] [1775036635.024149945] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036635.129440714] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1138554699840137e+34, y=-1.8044418030322774e-40
-[WARN] [1775036635.130438313] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036635.222061003] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1138431103906615e+34, y=-1.8044418030322774e-40
-[WARN] [1775036635.223072468] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036635.329347456] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1138304338846594e+34, y=-1.8044418030322774e-40
-[WARN] [1775036635.330472953] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036635.422760525] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=94.442m, x=93.9, y=10.099997558593751
-[WARN] [1775036635.423779435] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036635.516543570] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113804763960005e+34, y=-1.8044418030322774e-40
-[WARN] [1775036635.517819471] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036635.617034354] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1137924043666526e+34, y=-1.8044418030322774e-40
-[WARN] [1775036635.618018339] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036635.717323784] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.11377972786065e+34, y=-1.8044418030322774e-40
-[WARN] [1775036635.718510357] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036635.827481297] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113767051354648e+34, y=-1.8044418030322774e-40
-[WARN] [1775036635.828560266] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036635.929476232] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1137543748486454e+34, y=-1.8044418030322774e-40
-[WARN] [1775036635.930480781] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036636.026765187] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1137413814299934e+34, y=-1.8044418030322774e-40
-[WARN] [1775036636.027878818] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036636.130056398] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113728704923991e+34, y=-1.8044418030322774e-40
-[WARN] [1775036636.131038303] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036636.219326833] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=93.646m, x=93.099990234375, y=10.099997558593751
-[WARN] [1775036636.220406830] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036636.332193473] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1137036688246365e+34, y=-1.8044418030322774e-40
-[WARN] [1775036636.333184487] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036636.423417187] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113690675405984e+34, y=-1.8044418030322774e-40
-[WARN] [1775036636.424434819] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036636.520718548] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=93.348m, x=92.800009765625, y=10.099997558593751
-[WARN] [1775036636.620698256] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.11366563930663e+34, y=-1.8044418030322774e-40
-[WARN] [1775036636.622529083] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036636.719406511] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1136529628006272e+34, y=-1.8044418030322774e-40
-[WARN] [1775036636.720641144] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036636.815295573] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113640286294625e+34, y=-1.8044418030322774e-40
-[WARN] [1775036636.816654575] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036636.935232684] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1136276097886226e+34, y=-1.8044418030322774e-40
-[WARN] [1775036636.936279848] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036637.013569380] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=92.851m, x=92.299931640625, y=10.099997558593751
-[WARN] [1775036637.014582526] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036637.117389889] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=92.752m, x=92.2, y=10.099997558593751
-[WARN] [1775036637.118442288] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036637.226580708] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113589263357966e+34, y=-1.8044418030322774e-40
-[WARN] [1775036637.227557303] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036637.366489863] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1135765868519634e+34, y=-1.8044418030322774e-40
-[WARN] [1775036637.367460475] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036637.445378519] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=92.354m, x=91.80005859375, y=10.099997558593751
-[WARN] [1775036637.542027797] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113551550752609e+34, y=-1.8044418030322774e-40
-[WARN] [1775036637.544099650] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036637.626444658] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113538874246607e+34, y=-1.8044418030322774e-40
-[WARN] [1775036637.627533212] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036637.714872702] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1135261977406044e+34, y=-1.8044418030322774e-40
-[WARN] [1775036637.716100482] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036637.819391893] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1135135212346023e+34, y=-1.8044418030322774e-40
-[WARN] [1775036637.820510458] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036637.916343542] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1135008447285998e+34, y=-1.8044418030322774e-40
-[WARN] [1775036637.917457501] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036638.016183195] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1134881682225977e+34, y=-1.8044418030322774e-40
-[WARN] [1775036638.018416282] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036638.117725678] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=91.758m, x=91.2, y=10.099997558593751
-[WARN] [1775036638.229401472] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113462498297943e+34, y=-1.8044418030322774e-40
-[WARN] [1775036638.230382328] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036638.336718823] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1134498217919405e+34, y=-1.8044418030322774e-40
-[WARN] [1775036638.337653717] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036638.425268144] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1134371452859384e+34, y=-1.8044418030322774e-40
-[WARN] [1775036638.426343135] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036638.514144123] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=91.360m, x=90.800068359375, y=10.099997558593751
-[WARN] [1775036638.515204247] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036638.629315296] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113412109186584e+34, y=-1.8044418030322774e-40
-[WARN] [1775036638.630377950] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036638.716394766] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1133994326805816e+34, y=-1.8044418030322774e-40
-[WARN] [1775036638.717564255] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036638.820600803] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=91.062m, x=90.500029296875, y=10.099997558593751
-[WARN] [1775036638.821806475] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036638.924139525] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113373762755927e+34, y=-1.8044418030322774e-40
-[WARN] [1775036638.925178126] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036639.033933173] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113361403162575e+34, y=-1.8044418030322774e-40
-[WARN] [1775036639.034927462] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036639.132184455] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1133484097439224e+34, y=-1.8044418030322774e-40
-[WARN] [1775036639.133297560] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036639.223283832] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.11333605015057e+34, y=-1.8044418030322774e-40
-[WARN] [1775036639.224607993] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036639.311148664] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=90.565m, x=89.99993164062501, y=10.099997558593751
-[WARN] [1775036639.312243426] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036639.419729604] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1133106971385655e+34, y=-1.8044418030322774e-40
-[WARN] [1775036639.420828240] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036639.517553771] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1132980206325634e+34, y=-1.8044418030322774e-40
-[WARN] [1775036639.518522844] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036639.615421127] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=90.267m, x=89.7, y=10.099997558593751
-[WARN] [1775036639.720453221] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=90.167m, x=89.599990234375, y=10.099997558593751
-[WARN] [1775036639.821040430] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=90.068m, x=89.50003906250001, y=10.099997558593751
-[WARN] [1775036639.921958975] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113246997695904e+34, y=-1.8044418030322774e-40
-[WARN] [1775036639.924188829] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036640.034641152] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113234321189902e+34, y=-1.8044418030322774e-40
-[WARN] [1775036640.035660881] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036640.127730685] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1132216446838996e+34, y=-1.8044418030322774e-40
-[WARN] [1775036640.128741527] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036640.221508595] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1132092850905474e+34, y=-1.8044418030322774e-40
-[WARN] [1775036640.222648530] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036640.315612954] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=89.571m, x=89.000029296875, y=10.099997558593751
-[WARN] [1775036640.420563232] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1131839320785427e+34, y=-1.8044418030322774e-40
-[WARN] [1775036640.421533449] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036640.521876076] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1131712555725406e+34, y=-1.8044418030322774e-40
-[WARN] [1775036640.523582211] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036640.621985277] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1131585790665385e+34, y=-1.8044418030322774e-40
-[WARN] [1775036640.623012807] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036641.334033483] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113145902560536e+34, y=-1.8044418030322774e-40
-[WARN] [1775036641.336262350] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=-33649750746071.04, y=-2.4452889458987463e-26
-[WARN] [1775036641.422075226] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=88.370m, x=87.790830078125, y=10.099997558593751
-[WARN] [1775036641.526107501] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=88.280m, x=87.69999023437501, y=10.099998168945312
-[WARN] [1775036641.629415898] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=88.180m, x=87.5999609375, y=10.099998168945312
-[WARN] [1775036641.724653992] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=88.081m, x=87.5, y=10.099998168945312
-[WARN] [1775036641.821982405] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=87.982m, x=87.40001953125, y=10.099998168945312
-[WARN] [1775036641.927932006] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=87.882m, x=87.29998046875001, y=10.099998168945312
-[WARN] [1775036642.030598165] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=87.783m, x=87.199921875, y=10.099998168945312
-[WARN] [1775036642.132589220] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=87.684m, x=87.10000000000001, y=10.099998168945312
-[WARN] [1775036642.219533125] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=87.584m, x=87.00003906250001, y=10.099998168945312
-[WARN] [1775036642.326718922] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=87.485m, x=86.900009765625, y=10.099998168945312
-[WARN] [1775036642.418572933] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=87.385m, x=86.799853515625, y=10.099998168945312
-[WARN] [1775036642.532392695] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=87.286m, x=86.69998046875, y=10.099998168945312
-[WARN] [1775036642.625041975] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=87.187m, x=86.599990234375, y=10.099998168945312
-[WARN] [1775036642.720884955] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=87.088m, x=86.49986328125, y=10.099998168945312
-[WARN] [1775036642.865231217] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=86.988m, x=86.399970703125, y=10.099998168945312
-[WARN] [1775036642.958132307] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=86.889m, x=86.3, y=10.099998168945312
-[WARN] [1775036643.045164289] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=86.790m, x=86.200029296875, y=10.099998168945312
-[WARN] [1775036643.133804751] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=86.690m, x=86.10002929687501, y=10.099998168945312
-[WARN] [1775036643.223414093] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=86.591m, x=86.000009765625, y=10.099998168945312
-[WARN] [1775036643.326981167] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=86.492m, x=85.89998046875, y=10.099998168945312
-[WARN] [1775036643.418661837] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=86.392m, x=85.8, y=10.099998168945312
-[WARN] [1775036643.525640541] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=86.293m, x=85.699951171875, y=10.099998168945312
-[WARN] [1775036643.619393567] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=1.8055593228630335e-37, y=-5.316690778109923e+34
-[WARN] [1775036643.620454737] [trajectory_metrics_node]: Scarto camera odom per salto dinamico: step_too_large=273.276m, x=273.28369140625, y=-7.009617331021901e-11
-[WARN] [1775036643.723223199] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=86.094m, x=85.499990234375, y=10.099998168945312
-[WARN] [1775036643.824841284] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=85.995m, x=85.4, y=10.099998168945312
-[WARN] [1775036643.924396264] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=85.896m, x=85.29990234375, y=10.099998168945312
-[WARN] [1775036644.026355925] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=7.523347516254956e-38, y=-5.316690778109923e+34
-[WARN] [1775036644.027592815] [trajectory_metrics_node]: Scarto camera odom per salto dinamico: step_too_large=273.276m, x=273.28369140625, y=-7.009617331021901e-11
-[WARN] [1775036644.119720839] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=85.697m, x=85.10001953125, y=10.099998168945312
-[WARN] [1775036644.221739206] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=4.890148334916874e-38, y=-5.316690778109923e+34
-[WARN] [1775036644.222854323] [trajectory_metrics_node]: Scarto camera odom per salto dinamico: step_too_large=273.276m, x=273.28369140625, y=-7.009617331021901e-11
-[WARN] [1775036644.324470080] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=85.499m, x=84.89994140625001, y=10.099998168945312
-[WARN] [1775036644.424676463] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=85.399m, x=84.799921875, y=10.099998168945312
-[WARN] [1775036644.520278359] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=85.300m, x=84.6999609375, y=10.099998168945312
-[WARN] [1775036644.630669669] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=85.201m, x=84.5999609375, y=10.099998168945312
-[WARN] [1775036644.727439911] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=85.101m, x=84.500029296875, y=10.099998168945312
-[WARN] [1775036644.825291161] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=85.002m, x=84.4, y=10.099998168945312
-[WARN] [1775036644.930231401] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=84.903m, x=84.3, y=10.099998168945312
-[WARN] [1775036645.037915384] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=84.804m, x=84.19998046875, y=10.099998168945312
-[WARN] [1775036645.131733890] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=84.704m, x=84.09990234375, y=10.099998168945312
-[WARN] [1775036645.228230464] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=84.605m, x=84.000029296875, y=10.099998168945312
-[WARN] [1775036645.323620915] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=84.506m, x=83.899892578125, y=10.099998168945312
-[WARN] [1775036645.426010906] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=84.406m, x=83.7998828125, y=10.099998168945312
-[WARN] [1775036645.520666619] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=84.307m, x=83.699912109375, y=10.099998168945312
-[WARN] [1775036645.623594118] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=84.208m, x=83.599853515625, y=10.099998168945312
-[WARN] [1775036645.725683396] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=84.109m, x=83.50001953125, y=10.099998168945312
-[WARN] [1775036645.827258967] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=84.009m, x=83.399970703125, y=10.099998168945312
-[WARN] [1775036645.925118645] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=83.910m, x=83.299560546875, y=10.099998168945312
-[WARN] [1775036646.027260545] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=83.811m, x=83.19999023437501, y=10.099998168945312
-[WARN] [1775036646.128271886] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=83.711m, x=83.099970703125, y=10.099998168945312
-[WARN] [1775036646.235271187] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=83.612m, x=83.00001953125, y=10.099998168945312
-[WARN] [1775036646.324373410] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=83.513m, x=82.899990234375, y=10.099998168945312
-[WARN] [1775036646.417922178] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=83.414m, x=82.7998828125, y=10.099998168945312
-[WARN] [1775036646.529884606] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=83.314m, x=82.69999023437501, y=10.099998168945312
-[WARN] [1775036646.631046232] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=83.215m, x=82.599921875, y=10.099998168945312
-[WARN] [1775036646.722459753] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=83.116m, x=82.49994140625, y=10.099998168945312
-[WARN] [1775036646.820217553] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=83.017m, x=82.400029296875, y=10.099998168945312
-[WARN] [1775036646.925859943] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=82.917m, x=82.299970703125, y=10.099998168945312
-[WARN] [1775036647.021404307] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=82.818m, x=82.19990234375, y=10.099998168945312
-[WARN] [1775036647.126468421] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=82.719m, x=82.10002929687501, y=10.099998168945312
-[WARN] [1775036647.229313824] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=82.620m, x=82.000029296875, y=10.099998168945312
-[WARN] [1775036647.325016716] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=82.520m, x=81.8999951171875, y=10.099998168945312
-[WARN] [1775036647.436711112] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=82.421m, x=81.8000244140625, y=10.099998168945312
-[WARN] [1775036647.526271967] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=82.322m, x=81.70000488281251, y=10.099998168945312
-[WARN] [1775036647.625629696] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=82.223m, x=81.6000390625, y=10.099998168945312
-[WARN] [1775036647.768501333] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-1.1696946748064333e+36, y=-5.316690461197274e+34
-[WARN] [1775036647.858594731] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=82.024m, x=81.400009765625, y=10.099998168945312
-[WARN] [1775036647.948703821] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.785869821933014e+35, y=-5.316690461197274e+34
-[WARN] [1775036648.033980659] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-3.1904717084374565e+35, y=-5.316690461197274e+34
-[WARN] [1775036648.122319496] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-1.9941016085203006e+35, y=-5.316690461197274e+34
-[WARN] [1775036648.221786938] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-1.3292928994956476e+35, y=-5.316690461197274e+34
-[WARN] [1775036648.222867420] [trajectory_metrics_node]: Scarto camera odom per salto dinamico: step_too_large=273.276m, x=273.28369140625, y=-7.009617331021901e-11
-[WARN] [1775036648.321365203] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-8.639981972601953e+34, y=-5.316690461197274e+34
-[WARN] [1775036648.322958090] [trajectory_metrics_node]: Scarto camera odom per salto dinamico: step_too_large=273.276m, x=273.28369140625, y=-7.009617331021901e-11
-[WARN] [1775036648.423897106] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-5.31666859422442e+34, y=-5.316690461197274e+34
-[WARN] [1775036648.424931187] [trajectory_metrics_node]: Scarto camera odom per salto dinamico: step_too_large=273.276m, x=273.28369140625, y=-7.009617331021901e-11
-[WARN] [1775036648.527791105] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=81.330m, x=80.6999951171875, y=10.099998168945312
-[WARN] [1775036648.631462565] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=81.230m, x=80.5999755859375, y=10.099998168945312
-[WARN] [1775036648.721932054] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-1.4940428562241894e+34, y=-5.316690461197274e+34
-[WARN] [1775036648.826643066] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=81.032m, x=80.399921875, y=10.099998168945312
-[WARN] [1775036648.921800877] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-6.230553406145757e+33, y=-5.316690461197274e+34
-[WARN] [1775036649.024985482] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.152113482011552e+33, y=-5.316690461197274e+34
-[WARN] [1775036649.026086652] [trajectory_metrics_node]: Scarto camera odom per salto dinamico: step_too_large=273.276m, x=273.28369140625, y=-7.009617331021901e-11
-[WARN] [1775036649.127364754] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=80.734m, x=80.0999658203125, y=10.099998168945312
-[WARN] [1775036649.223870920] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=80.635m, x=79.99991699218751, y=10.099998168945312
-[WARN] [1775036649.319754354] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=80.536m, x=79.8999853515625, y=10.099998168945312
-[WARN] [1775036649.426040021] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=80.437m, x=79.799990234375, y=10.099998168945312
-[WARN] [1775036649.522970805] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=80.337m, x=79.7, y=10.099998168945312
-[WARN] [1775036649.625867289] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=80.337m, x=79.7, y=10.099998168945312
-[WARN] [1775036649.730934255] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=80.337m, x=79.7, y=10.099998168945312
-[WARN] [1775036649.831427077] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=80.337m, x=79.7, y=10.099998168945312
-[WARN] [1775036649.921933642] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=80.337m, x=79.7, y=10.099998168945312
-[WARN] [1775036650.025072072] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=80.337m, x=79.7, y=10.099998168945312
-[WARN] [1775036650.121453493] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=80.337m, x=79.7, y=10.099998168945312
-[WARN] [1775036650.220513082] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=80.337m, x=79.7, y=10.099998168945312
-[WARN] [1775036650.327219459] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=80.337m, x=79.7, y=10.099998168945312
-[WARN] [1775036650.421929593] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=80.337m, x=79.7, y=10.099998168945312
-[WARN] [1775036650.526664267] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=80.337m, x=79.7, y=10.099998168945312
-[WARN] [1775036650.632577885] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=80.337m, x=79.7, y=10.099998168945312
-[WARN] [1775036650.730058148] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.673067172681345e+32, y=-5.316690461197274e+34
-[WARN] [1775036650.731161974] [trajectory_metrics_node]: Scarto camera odom per salto dinamico: step_too_large=273.276m, x=273.28369140625, y=-7.009617331021901e-11
-[WARN] [1775036650.818988460] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=80.337m, x=79.7, y=10.099998168945312
-[WARN] [1775036650.930892681] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=80.337m, x=79.7, y=10.099998168945312
-[WARN] [1775036651.022764923] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=80.337m, x=79.7, y=10.099998168945312
-[INFO] [1775036651.832686574] [trajectory_metrics_node]: Salvati:
+  max_abs_pose_m: 10000.0
+  max_abs_estimate_m: 10000.0
+  max_abs_error_m: 10000.0
+[INFO] [1775038136.027413705] [trajectory_metrics_node]: GT inizializzata: first_gt_rel_cam = [-0.008, 0.000]
+[INFO] [1775038136.028456982] [trajectory_metrics_node]: Primo campione stima per target 1: [3.835, -2.996]
+[INFO] [1775038138.840632138] [trajectory_metrics_node]: Rotazione iniziale GT->stima fissata: 145.31 deg
+[WARN] [1775038138.919120989] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1145529947267896e+34, y=-1.8044418030322774e-40
+[WARN] [1775038139.014340472] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1145529947267896e+34, y=-1.8044418030322774e-40
+[WARN] [1775038139.113156333] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1145529947267896e+34, y=-1.8044418030322774e-40
+[WARN] [1775038139.216021007] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1145529947267896e+34, y=-1.8044418030322774e-40
+[WARN] [1775038139.309439993] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1145529947267896e+34, y=-1.8044418030322774e-40
+[WARN] [1775038139.417197100] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1145529947267896e+34, y=-1.8044418030322774e-40
+[WARN] [1775038139.511131326] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1145529947267896e+34, y=-1.8044418030322774e-40
+[WARN] [1775038139.721540085] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1145529947267896e+34, y=-1.8044418030322774e-40
+[WARN] [1775038139.814784663] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1145529947267896e+34, y=-1.8044418030322774e-40
+[WARN] [1775038139.921618261] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114552677814139e+34, y=-1.8044418030322774e-40
+[WARN] [1775038140.014700754] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114540001308137e+34, y=-1.8044418030322774e-40
+[WARN] [1775038140.125301790] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1145273248021345e+34, y=-1.8044418030322774e-40
+[WARN] [1775038140.214873242] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1145149652087823e+34, y=-1.8044418030322774e-40
+[WARN] [1775038140.315270506] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1145019717901303e+34, y=-1.8044418030322774e-40
+[WARN] [1775038140.414126254] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114489295284128e+34, y=-1.8044418030322774e-40
+[WARN] [1775038140.509113041] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1144766187781257e+34, y=-1.8044418030322774e-40
+[WARN] [1775038140.625115887] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114463942272123e+34, y=-1.8044418030322774e-40
+[WARN] [1775038140.714361430] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114451265766121e+34, y=-1.8044418030322774e-40
+[WARN] [1775038140.817304161] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114438589260119e+34, y=-1.8044418030322774e-40
+[WARN] [1775038140.916410207] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1144259127541164e+34, y=-1.8044418030322774e-40
+[WARN] [1775038141.017907857] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1144132362481143e+34, y=-1.8044418030322774e-40
+[WARN] [1775038141.114812457] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114400876654762e+34, y=-1.8044418030322774e-40
+[WARN] [1775038141.214005984] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1143882001487595e+34, y=-1.8044418030322774e-40
+[WARN] [1775038141.363650956] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1143752067301075e+34, y=-1.8044418030322774e-40
+[WARN] [1775038141.544061601] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=8.272008073922014e-26, y=-5.316609648471509e+34
+[WARN] [1775038141.635106641] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1143374941247507e+34, y=-1.8044418030322774e-40
+[WARN] [1775038141.722199478] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114324817618748e+34, y=-1.8044418030322774e-40
+[WARN] [1775038141.811609463] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114311824200096e+34, y=-1.8044418030322774e-40
+[WARN] [1775038141.916233746] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114299464606744e+34, y=-1.8044418030322774e-40
+[WARN] [1775038142.013207689] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1142864711880915e+34, y=-1.8044418030322774e-40
+[WARN] [1775038142.117057026] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114273794682089e+34, y=-1.8044418030322774e-40
+[WARN] [1775038142.214896779] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114261118176087e+34, y=-1.8044418030322774e-40
+[WARN] [1775038142.315449690] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1142484416700847e+34, y=-1.8044418030322774e-40
+[WARN] [1775038142.412990046] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114235765164082e+34, y=-1.8044418030322774e-40
+[WARN] [1775038142.514209952] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.11422340557073e+34, y=-1.8044418030322774e-40
+[WARN] [1775038142.619809269] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1142104121520775e+34, y=-1.8044418030322774e-40
+[WARN] [1775038142.725189465] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1141977356460754e+34, y=-1.8044418030322774e-40
+[WARN] [1775038142.818800873] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1141850591400733e+34, y=-1.8044418030322774e-40
+[WARN] [1775038143.015889654] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1141600230407185e+34, y=-1.8044418030322774e-40
+[WARN] [1775038143.122500708] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114147029622066e+34, y=-1.8044418030322774e-40
+[WARN] [1775038143.218100105] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114134353116064e+34, y=-1.8044418030322774e-40
+[WARN] [1775038143.330260808] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114121676610062e+34, y=-1.8044418030322774e-40
+[WARN] [1775038143.425577705] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1141090001040593e+34, y=-1.8044418030322774e-40
+[WARN] [1775038143.521286991] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114096323598057e+34, y=-1.8044418030322774e-40
+[WARN] [1775038143.623339397] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1140836470920547e+34, y=-1.8044418030322774e-40
+[WARN] [1775038143.715848204] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1140709705860526e+34, y=-1.8044418030322774e-40
+[WARN] [1775038144.022736463] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114032941068046e+34, y=-1.8044418030322774e-40
+[WARN] [1775038144.119170788] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1140202645620432e+34, y=-1.8044418030322774e-40
+[WARN] [1775038144.216441616] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.114007588056041e+34, y=-1.8044418030322774e-40
+[WARN] [1775038144.320590085] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113994911550039e+34, y=-1.8044418030322774e-40
+[WARN] [1775038144.420816405] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1139822350440365e+34, y=-1.8044418030322774e-40
+[WARN] [1775038144.519226805] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1139695585380344e+34, y=-1.8044418030322774e-40
+[WARN] [1775038144.618588304] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113956882032032e+34, y=-1.8044418030322774e-40
+[WARN] [1775038144.715048094] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1139442055260297e+34, y=-1.8044418030322774e-40
+[WARN] [1775038144.816246330] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1139315290200276e+34, y=-1.8044418030322774e-40
+[WARN] [1775038144.919314670] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113918852514025e+34, y=-1.8044418030322774e-40
+[WARN] [1775038145.016694590] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113906176008023e+34, y=-1.8044418030322774e-40
+[WARN] [1775038145.123120753] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1138934995020204e+34, y=-1.8044418030322774e-40
+[WARN] [1775038145.214900621] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1138808229960183e+34, y=-1.8044418030322774e-40
+[WARN] [1775038145.324029928] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1138681464900162e+34, y=-1.8044418030322774e-40
+[WARN] [1775038145.421565018] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1138554699840137e+34, y=-1.8044418030322774e-40
+[WARN] [1775038145.520816292] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1138427934780116e+34, y=-1.8044418030322774e-40
+[WARN] [1775038145.617150498] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113830116972009e+34, y=-1.8044418030322774e-40
+[WARN] [1775038145.719531705] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113817440466007e+34, y=-1.8044418030322774e-40
+[WARN] [1775038145.924882600] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1137920874540023e+34, y=-1.8044418030322774e-40
+[WARN] [1775038146.019452074] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113779410948e+34, y=-1.8044418030322774e-40
+[WARN] [1775038146.114756114] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1137667344419976e+34, y=-1.8044418030322774e-40
+[WARN] [1775038146.218567922] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1137540579359955e+34, y=-1.8044418030322774e-40
+[WARN] [1775038146.315558466] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1137413814299934e+34, y=-1.8044418030322774e-40
+[WARN] [1775038146.508251841] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113728704923991e+34, y=-1.8044418030322774e-40
+[WARN] [1775038146.947740951] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1136653223939794e+34, y=-1.8044418030322774e-40
+[WARN] [1775038147.040565304] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1136526458879773e+34, y=-1.8044418030322774e-40
+[WARN] [1775038147.134166200] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113639969381975e+34, y=-1.8044418030322774e-40
+[WARN] [1775038147.227662931] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1136272928759727e+34, y=-1.8044418030322774e-40
+[WARN] [1775038147.324860851] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1136146163699706e+34, y=-1.8044418030322774e-40
+[WARN] [1775038147.523122890] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113589263357966e+34, y=-1.8044418030322774e-40
+[WARN] [1775038147.622213117] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1135765868519634e+34, y=-1.8044418030322774e-40
+[WARN] [1775038147.716571440] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1135639103459613e+34, y=-1.8044418030322774e-40
+[WARN] [1775038147.820509507] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113551233839959e+34, y=-1.8044418030322774e-40
+[WARN] [1775038148.016870652] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1135258808279545e+34, y=-1.8044418030322774e-40
+[WARN] [1775038148.119904649] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113513204321952e+34, y=-1.8044418030322774e-40
+[WARN] [1775038148.215525184] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.11350052781595e+34, y=-1.8044418030322774e-40
+[WARN] [1775038148.315699527] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1134878513099478e+34, y=-1.8044418030322774e-40
+[WARN] [1775038148.428001769] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113475174803945e+34, y=-1.8044418030322774e-40
+[WARN] [1775038148.519654620] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113462498297943e+34, y=-1.8044418030322774e-40
+[WARN] [1775038148.615430674] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1134498217919405e+34, y=-1.8044418030322774e-40
+[WARN] [1775038148.726702851] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1134371452859384e+34, y=-1.8044418030322774e-40
+[WARN] [1775038148.823052638] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1134244687799364e+34, y=-1.8044418030322774e-40
+[WARN] [1775038148.923079087] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113411792273934e+34, y=-1.8044418030322774e-40
+[WARN] [1775038149.013899570] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1133991157679317e+34, y=-1.8044418030322774e-40
+[WARN] [1775038149.116231652] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113386439261929e+34, y=-1.8044418030322774e-40
+[WARN] [1775038149.220639110] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113373762755927e+34, y=-1.8044418030322774e-40
+[WARN] [1775038149.321063920] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113361086249925e+34, y=-1.8044418030322774e-40
+[WARN] [1775038149.418646751] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1133484097439224e+34, y=-1.8044418030322774e-40
+[WARN] [1775038149.714391537] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1133103802259156e+34, y=-1.8044418030322774e-40
+[WARN] [1775038149.816872159] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1132977037199135e+34, y=-1.8044418030322774e-40
+[WARN] [1775038149.919044154] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113285027213911e+34, y=-1.8044418030322774e-40
+[WARN] [1775038150.014904390] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113272350707909e+34, y=-1.8044418030322774e-40
+[WARN] [1775038150.112878848] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1132596742019063e+34, y=-1.8044418030322774e-40
+[WARN] [1775038150.217142025] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113246997695904e+34, y=-1.8044418030322774e-40
+[WARN] [1775038150.319297438] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113234321189902e+34, y=-1.8044418030322774e-40
+[WARN] [1775038150.521963386] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1132089681778975e+34, y=-1.8044418030322774e-40
+[WARN] [1775038150.616410375] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113196291671895e+34, y=-1.8044418030322774e-40
+[WARN] [1775038150.721966484] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113183615165893e+34, y=-1.8044418030322774e-40
+[WARN] [1775038150.838601175] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1131709386598907e+34, y=-1.8044418030322774e-40
+[WARN] [1775038150.921825709] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113158262153888e+34, y=-1.8044418030322774e-40
+[WARN] [1775038151.023012845] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113145585647886e+34, y=-1.8044418030322774e-40
+[WARN] [1775038151.117238262] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1131329091418835e+34, y=-1.8044418030322774e-40
+[WARN] [1775038151.218626165] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1131202326358814e+34, y=-1.8044418030322774e-40
+[WARN] [1775038151.317293916] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1131075561298793e+34, y=-1.8044418030322774e-40
+[WARN] [1775038151.523753426] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.1130822031178746e+34, y=-1.8044418030322774e-40
+[WARN] [1775038151.616060050] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113069526611872e+34, y=-1.8044418030322774e-40
+[WARN] [1775038151.721270856] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.11305685010587e+34, y=-1.8044418030322774e-40
+[WARN] [1775038151.813895057] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-4.113044173599868e+34, y=-1.8044418030322774e-40
+[WARN] [1775038151.912782599] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-1.6452125988375461e+35, y=-1.8044418030322774e-40
+[WARN] [1775038152.013192748] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-1.6452075282351453e+35, y=-1.8044418030322774e-40
+[WARN] [1775038152.114977404] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-1.6452024576327443e+35, y=-1.8044418030322774e-40
+[WARN] [1775038152.222460414] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-1.6451973870303434e+35, y=-1.8044418030322774e-40
+[WARN] [1775038152.322600112] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-1.6451923164279426e+35, y=-1.8044418030322774e-40
+[WARN] [1775038152.420279723] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-1.6451872458255416e+35, y=-1.8044418030322774e-40
+[INFO] [1775038161.984945736] [trajectory_metrics_node]: Salvati:
   /home/isarlab/ros2_humble/metrics_output/esperimento_01/straight_right/esperimento_01_fusion/fusion_metrics_detail.csv
   /home/isarlab/ros2_humble/metrics_output/esperimento_01/straight_right/esperimento_01_fusion/fusion_metrics_summary.csv
   /home/isarlab/ros2_humble/metrics_output/esperimento_01/straight_right/esperimento_01_fusion/fusion_trajectory.png
   /home/isarlab/ros2_humble/metrics_output/esperimento_01/straight_right/esperimento_01_fusion/fusion_error.png
 Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
-[INFO] [1775036651.833489852] [trajectory_metrics_node]: Summary fusion: target_id=1, n=30, MAE_norm=0.324 m, RMSE_norm=1.257 m, final_error=4.867 m, max_error=4.867 m
+[INFO] [1775038161.985363496] [trajectory_metrics_node]: Summary fusion: target_id=1, n=30, MAE_norm=0.324 m, RMSE_norm=1.255 m, final_error=4.859 m, max_error=4.859 m
 Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
 Traceback (most recent call last):
-  File "/home/isarlab/ros2_humble/install/trajectory_metrics/lib/python3.10/site-packages/trajectory_metrics/trajectory_metrics_node.py", line 778, in main
+  File "/home/isarlab/ros2_humble/build/trajectory_metrics/trajectory_metrics/trajectory_metrics_node.py", line 712, in main
     rclpy.spin(node)
   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 229, in spin
     executor.spin_once()
@@ -373,8 +158,8 @@ During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
   File "/home/isarlab/ros2_humble/install/trajectory_metrics/lib/trajectory_metrics/trajectory_metrics_node", line 33, in <module>
-    sys.exit(load_entry_point('trajectory-metrics==0.0.1', 'console_scripts', 'trajectory_metrics_node')())
-  File "/home/isarlab/ros2_humble/install/trajectory_metrics/lib/python3.10/site-packages/trajectory_metrics/trajectory_metrics_node.py", line 785, in main
+    sys.exit(load_entry_point('trajectory-metrics', 'console_scripts', 'trajectory_metrics_node')())
+  File "/home/isarlab/ros2_humble/build/trajectory_metrics/trajectory_metrics/trajectory_metrics_node.py", line 719, in main
     rclpy.shutdown()
   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 130, in shutdown
     _shutdown(context=context)
