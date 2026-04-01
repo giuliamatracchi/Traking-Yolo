@@ -1,0 +1,191 @@
+[0.194s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'experiments', '--symlink-install']
+[0.194s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['experiments'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x75267a679930>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x75267a7ff400>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x75267a7ff400>>, mixin_verb=('build',))
+[0.392s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.392s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.392s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.392s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.392s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.392s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.393s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/isarlab/ros2_humble/src'
+[0.393s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.393s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.393s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.393s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.393s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.393s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.393s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.393s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.393s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.406s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.406s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.406s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.406s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.406s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.406s] Level 1:colcon.colcon_core.package_identification:_identify(ackermann_kf_tracker) by extensions ['ignore', 'ignore_ament_install']
+[0.406s] Level 1:colcon.colcon_core.package_identification:_identify(ackermann_kf_tracker) by extension 'ignore'
+[0.406s] Level 1:colcon.colcon_core.package_identification:_identify(ackermann_kf_tracker) by extension 'ignore_ament_install'
+[0.406s] Level 1:colcon.colcon_core.package_identification:_identify(ackermann_kf_tracker) by extensions ['colcon_pkg']
+[0.406s] Level 1:colcon.colcon_core.package_identification:_identify(ackermann_kf_tracker) by extension 'colcon_pkg'
+[0.406s] Level 1:colcon.colcon_core.package_identification:_identify(ackermann_kf_tracker) by extensions ['colcon_meta']
+[0.406s] Level 1:colcon.colcon_core.package_identification:_identify(ackermann_kf_tracker) by extension 'colcon_meta'
+[0.406s] Level 1:colcon.colcon_core.package_identification:_identify(ackermann_kf_tracker) by extensions ['ros']
+[0.406s] Level 1:colcon.colcon_core.package_identification:_identify(ackermann_kf_tracker) by extension 'ros'
+[0.409s] DEBUG:colcon.colcon_core.package_identification:Package 'ackermann_kf_tracker' with type 'ros.ament_python' and name 'ackermann_kf_tracker'
+[0.410s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.412s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.412s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.412s] Level 1:colcon.colcon_core.package_identification:_identify(depth_yolo_fusion) by extensions ['ignore', 'ignore_ament_install']
+[0.412s] Level 1:colcon.colcon_core.package_identification:_identify(depth_yolo_fusion) by extension 'ignore'
+[0.412s] Level 1:colcon.colcon_core.package_identification:_identify(depth_yolo_fusion) by extension 'ignore_ament_install'
+[0.412s] Level 1:colcon.colcon_core.package_identification:_identify(depth_yolo_fusion) by extensions ['colcon_pkg']
+[0.413s] Level 1:colcon.colcon_core.package_identification:_identify(depth_yolo_fusion) by extension 'colcon_pkg'
+[0.413s] Level 1:colcon.colcon_core.package_identification:_identify(depth_yolo_fusion) by extensions ['colcon_meta']
+[0.413s] Level 1:colcon.colcon_core.package_identification:_identify(depth_yolo_fusion) by extension 'colcon_meta'
+[0.413s] Level 1:colcon.colcon_core.package_identification:_identify(depth_yolo_fusion) by extensions ['ros']
+[0.413s] Level 1:colcon.colcon_core.package_identification:_identify(depth_yolo_fusion) by extension 'ros'
+[0.414s] DEBUG:colcon.colcon_core.package_identification:Package 'depth_yolo_fusion' with type 'ros.ament_python' and name 'depth_yolo_fusion'
+[0.414s] Level 1:colcon.colcon_core.package_identification:_identify(experiments) by extensions ['ignore', 'ignore_ament_install']
+[0.414s] Level 1:colcon.colcon_core.package_identification:_identify(experiments) by extension 'ignore'
+[0.414s] Level 1:colcon.colcon_core.package_identification:_identify(experiments) by extension 'ignore_ament_install'
+[0.414s] Level 1:colcon.colcon_core.package_identification:_identify(experiments) by extensions ['colcon_pkg']
+[0.414s] Level 1:colcon.colcon_core.package_identification:_identify(experiments) by extension 'colcon_pkg'
+[0.414s] Level 1:colcon.colcon_core.package_identification:_identify(experiments) by extensions ['colcon_meta']
+[0.414s] Level 1:colcon.colcon_core.package_identification:_identify(experiments) by extension 'colcon_meta'
+[0.414s] Level 1:colcon.colcon_core.package_identification:_identify(experiments) by extensions ['ros']
+[0.414s] Level 1:colcon.colcon_core.package_identification:_identify(experiments) by extension 'ros'
+[0.415s] DEBUG:colcon.colcon_core.package_identification:Package 'experiments' with type 'ros.ament_python' and name 'experiments'
+[0.416s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.416s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.416s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.416s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['ignore', 'ignore_ament_install']
+[0.416s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'ignore'
+[0.416s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'ignore_ament_install'
+[0.416s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['colcon_pkg']
+[0.417s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'colcon_pkg'
+[0.417s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['colcon_meta']
+[0.417s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'colcon_meta'
+[0.417s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['ros']
+[0.417s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'ros'
+[0.417s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['cmake', 'python']
+[0.417s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'cmake'
+[0.417s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'python'
+[0.417s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['python_setup_py']
+[0.417s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'python_setup_py'
+[0.417s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.417s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.417s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.418s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_unreal_interface) by extensions ['ignore', 'ignore_ament_install']
+[0.418s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_unreal_interface) by extension 'ignore'
+[0.418s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_unreal_interface) by extension 'ignore_ament_install'
+[0.418s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_unreal_interface) by extensions ['colcon_pkg']
+[0.418s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_unreal_interface) by extension 'colcon_pkg'
+[0.418s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_unreal_interface) by extensions ['colcon_meta']
+[0.418s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_unreal_interface) by extension 'colcon_meta'
+[0.418s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_unreal_interface) by extensions ['ros']
+[0.418s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_unreal_interface) by extension 'ros'
+[0.419s] DEBUG:colcon.colcon_core.package_identification:Package 'ros2_unreal_interface' with type 'ros.ament_python' and name 'ros2_unreal_interface'
+[0.419s] Level 1:colcon.colcon_core.package_identification:_identify(unicycle_kf_tracker) by extensions ['ignore', 'ignore_ament_install']
+[0.419s] Level 1:colcon.colcon_core.package_identification:_identify(unicycle_kf_tracker) by extension 'ignore'
+[0.420s] Level 1:colcon.colcon_core.package_identification:_identify(unicycle_kf_tracker) by extension 'ignore_ament_install'
+[0.420s] Level 1:colcon.colcon_core.package_identification:_identify(unicycle_kf_tracker) by extensions ['colcon_pkg']
+[0.420s] Level 1:colcon.colcon_core.package_identification:_identify(unicycle_kf_tracker) by extension 'colcon_pkg'
+[0.420s] Level 1:colcon.colcon_core.package_identification:_identify(unicycle_kf_tracker) by extensions ['colcon_meta']
+[0.420s] Level 1:colcon.colcon_core.package_identification:_identify(unicycle_kf_tracker) by extension 'colcon_meta'
+[0.420s] Level 1:colcon.colcon_core.package_identification:_identify(unicycle_kf_tracker) by extensions ['ros']
+[0.420s] Level 1:colcon.colcon_core.package_identification:_identify(unicycle_kf_tracker) by extension 'ros'
+[0.420s] DEBUG:colcon.colcon_core.package_identification:Package 'unicycle_kf_tracker' with type 'ros.ament_python' and name 'unicycle_kf_tracker'
+[0.420s] Level 1:colcon.colcon_core.package_identification:_identify(yolo_detector) by extensions ['ignore', 'ignore_ament_install']
+[0.420s] Level 1:colcon.colcon_core.package_identification:_identify(yolo_detector) by extension 'ignore'
+[0.421s] Level 1:colcon.colcon_core.package_identification:_identify(yolo_detector) by extension 'ignore_ament_install'
+[0.421s] Level 1:colcon.colcon_core.package_identification:_identify(yolo_detector) by extensions ['colcon_pkg']
+[0.421s] Level 1:colcon.colcon_core.package_identification:_identify(yolo_detector) by extension 'colcon_pkg'
+[0.421s] Level 1:colcon.colcon_core.package_identification:_identify(yolo_detector) by extensions ['colcon_meta']
+[0.421s] Level 1:colcon.colcon_core.package_identification:_identify(yolo_detector) by extension 'colcon_meta'
+[0.421s] Level 1:colcon.colcon_core.package_identification:_identify(yolo_detector) by extensions ['ros']
+[0.421s] Level 1:colcon.colcon_core.package_identification:_identify(yolo_detector) by extension 'ros'
+[0.421s] DEBUG:colcon.colcon_core.package_identification:Package 'yolo_detector' with type 'ros.ament_python' and name 'yolo_detector'
+[0.421s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.421s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.421s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.421s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.421s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.466s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'ackermann_kf_tracker' in 'ackermann_kf_tracker'
+[0.466s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'depth_yolo_fusion' in 'depth_yolo_fusion'
+[0.466s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'ros2_unreal_interface' in 'ros2_unreal_interface'
+[0.466s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'unicycle_kf_tracker' in 'unicycle_kf_tracker'
+[0.466s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'yolo_detector' in 'yolo_detector'
+[0.466s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.466s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.468s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/isarlab/ros2_humble/src/install/experiments' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.470s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 7 installed packages in /home/isarlab/ros2_humble/install
+[0.471s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 5 installed packages in /home/isarlab/ros2_humble/src/install
+[0.472s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 4 installed packages in /home/isarlab/cv_bridge_ws/install
+[0.474s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 272 installed packages in /opt/ros/humble
+[0.477s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.520s] Level 5:colcon.colcon_core.verb:set package 'experiments' build argument 'cmake_args' from command line to 'None'
+[0.521s] Level 5:colcon.colcon_core.verb:set package 'experiments' build argument 'cmake_target' from command line to 'None'
+[0.521s] Level 5:colcon.colcon_core.verb:set package 'experiments' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.521s] Level 5:colcon.colcon_core.verb:set package 'experiments' build argument 'cmake_clean_cache' from command line to 'False'
+[0.521s] Level 5:colcon.colcon_core.verb:set package 'experiments' build argument 'cmake_clean_first' from command line to 'False'
+[0.521s] Level 5:colcon.colcon_core.verb:set package 'experiments' build argument 'cmake_force_configure' from command line to 'False'
+[0.521s] Level 5:colcon.colcon_core.verb:set package 'experiments' build argument 'ament_cmake_args' from command line to 'None'
+[0.521s] Level 5:colcon.colcon_core.verb:set package 'experiments' build argument 'catkin_cmake_args' from command line to 'None'
+[0.521s] Level 5:colcon.colcon_core.verb:set package 'experiments' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.521s] DEBUG:colcon.colcon_core.verb:Building package 'experiments' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/isarlab/ros2_humble/src/build/experiments', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/isarlab/ros2_humble/src/install/experiments', 'merge_install': False, 'path': '/home/isarlab/ros2_humble/src/experiments', 'symlink_install': True, 'test_result_base': None}
+[0.521s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.523s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.523s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/isarlab/ros2_humble/src/experiments' with build type 'ament_python'
+[0.523s] Level 1:colcon.colcon_core.shell:create_environment_hook('experiments', 'ament_prefix_path')
+[0.526s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.526s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/isarlab/ros2_humble/src/install/experiments/share/experiments/hook/ament_prefix_path.ps1'
+[0.529s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/isarlab/ros2_humble/src/install/experiments/share/experiments/hook/ament_prefix_path.dsv'
+[0.530s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/isarlab/ros2_humble/src/install/experiments/share/experiments/hook/ament_prefix_path.sh'
+[0.531s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.531s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.072s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/isarlab/ros2_humble/src/experiments'
+[1.073s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.073s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.732s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/isarlab/ros2_humble/src/build/experiments': AMENT_PREFIX_PATH=/home/isarlab/ros2_humble/src/install/yolo_detector:/home/isarlab/ros2_humble/src/install/depth_yolo_fusion:/home/isarlab/ros2_humble/src/install/ackermann_kf_tracker:/home/isarlab/ros2_humble/install/experiments:/home/isarlab/ros2_humble/install/yolo_detector:/home/isarlab/ros2_humble/install/unicycle_kf_tracker:/home/isarlab/ros2_humble/install/thesis_experiments:/home/isarlab/ros2_humble/install/ros2_unreal_interface:/home/isarlab/ros2_humble/install/depth_yolo_fusion:/home/isarlab/ros2_humble/install/ackermann_kf_tracker:/home/isarlab/ros2_humble/src/install/experiments:/home/isarlab/ros2_humble/src/install/unicycle_kf_tracker:/home/isarlab/ros2_humble/src/install/ros2_unreal_interface:/home/isarlab/cv_bridge_ws/install/vision_opencv:/home/isarlab/cv_bridge_ws/install/opencv_tests:/home/isarlab/cv_bridge_ws/install/image_geometry:/home/isarlab/cv_bridge_ws/install/cv_bridge:/opt/ros/humble PYTHONPATH=/home/isarlab/ros2_humble/src/build/experiments/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/isarlab/ros2_humble/src/install/experiments/lib/python3.10/site-packages:/home/isarlab/ros2_humble/src/install/yolo_detector/lib/python3.10/site-packages:/home/isarlab/ros2_humble/src/install/depth_yolo_fusion/lib/python3.10/site-packages:/home/isarlab/ros2_humble/src/install/ackermann_kf_tracker/lib/python3.10/site-packages:/home/isarlab/ros2_humble/install/experiments/lib/python3.10/site-packages:/home/isarlab/ros2_humble/install/yolo_detector/lib/python3.10/site-packages:/home/isarlab/ros2_humble/install/unicycle_kf_tracker/lib/python3.10/site-packages:/home/isarlab/ros2_humble/install/thesis_experiments/lib/python3.10/site-packages:/home/isarlab/ros2_humble/install/ros2_unreal_interface/lib/python3.10/site-packages:/home/isarlab/ros2_humble/install/depth_yolo_fusion/lib/python3.10/site-packages:/home/isarlab/ros2_humble/install/ackermann_kf_tracker/lib/python3.10/site-packages:/home/isarlab/ros2_humble/src/build/experiments:/home/isarlab/ros2_humble/src/install/experiments/lib/python3.10/site-packages:/home/isarlab/ros2_humble/src/install/unicycle_kf_tracker/lib/python3.10/site-packages:/home/isarlab/ros2_humble/src/install/ros2_unreal_interface/lib/python3.10/site-packages:/home/isarlab/cv_bridge_ws/install/opencv_tests/lib/python3.10/site-packages:/home/isarlab/cv_bridge_ws/install/image_geometry/local/lib/python3.10/dist-packages:/home/isarlab/cv_bridge_ws/install/cv_bridge/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/isarlab/ros2_humble/src/build/experiments/build --no-deps symlink_data
+[2.227s] Level 1:colcon.colcon_core.shell:create_environment_hook('experiments', 'pythonpath_develop')
+[2.227s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/isarlab/ros2_humble/src/build/experiments/share/experiments/hook/pythonpath_develop.ps1'
+[2.228s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/isarlab/ros2_humble/src/build/experiments' returned '0': AMENT_PREFIX_PATH=/home/isarlab/ros2_humble/src/install/yolo_detector:/home/isarlab/ros2_humble/src/install/depth_yolo_fusion:/home/isarlab/ros2_humble/src/install/ackermann_kf_tracker:/home/isarlab/ros2_humble/install/experiments:/home/isarlab/ros2_humble/install/yolo_detector:/home/isarlab/ros2_humble/install/unicycle_kf_tracker:/home/isarlab/ros2_humble/install/thesis_experiments:/home/isarlab/ros2_humble/install/ros2_unreal_interface:/home/isarlab/ros2_humble/install/depth_yolo_fusion:/home/isarlab/ros2_humble/install/ackermann_kf_tracker:/home/isarlab/ros2_humble/src/install/experiments:/home/isarlab/ros2_humble/src/install/unicycle_kf_tracker:/home/isarlab/ros2_humble/src/install/ros2_unreal_interface:/home/isarlab/cv_bridge_ws/install/vision_opencv:/home/isarlab/cv_bridge_ws/install/opencv_tests:/home/isarlab/cv_bridge_ws/install/image_geometry:/home/isarlab/cv_bridge_ws/install/cv_bridge:/opt/ros/humble PYTHONPATH=/home/isarlab/ros2_humble/src/build/experiments/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/isarlab/ros2_humble/src/install/experiments/lib/python3.10/site-packages:/home/isarlab/ros2_humble/src/install/yolo_detector/lib/python3.10/site-packages:/home/isarlab/ros2_humble/src/install/depth_yolo_fusion/lib/python3.10/site-packages:/home/isarlab/ros2_humble/src/install/ackermann_kf_tracker/lib/python3.10/site-packages:/home/isarlab/ros2_humble/install/experiments/lib/python3.10/site-packages:/home/isarlab/ros2_humble/install/yolo_detector/lib/python3.10/site-packages:/home/isarlab/ros2_humble/install/unicycle_kf_tracker/lib/python3.10/site-packages:/home/isarlab/ros2_humble/install/thesis_experiments/lib/python3.10/site-packages:/home/isarlab/ros2_humble/install/ros2_unreal_interface/lib/python3.10/site-packages:/home/isarlab/ros2_humble/install/depth_yolo_fusion/lib/python3.10/site-packages:/home/isarlab/ros2_humble/install/ackermann_kf_tracker/lib/python3.10/site-packages:/home/isarlab/ros2_humble/src/build/experiments:/home/isarlab/ros2_humble/src/install/experiments/lib/python3.10/site-packages:/home/isarlab/ros2_humble/src/install/unicycle_kf_tracker/lib/python3.10/site-packages:/home/isarlab/ros2_humble/src/install/ros2_unreal_interface/lib/python3.10/site-packages:/home/isarlab/cv_bridge_ws/install/opencv_tests/lib/python3.10/site-packages:/home/isarlab/cv_bridge_ws/install/image_geometry/local/lib/python3.10/dist-packages:/home/isarlab/cv_bridge_ws/install/cv_bridge/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/isarlab/ros2_humble/src/build/experiments/build --no-deps symlink_data
+[2.229s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/isarlab/ros2_humble/src/build/experiments/share/experiments/hook/pythonpath_develop.dsv'
+[2.230s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/isarlab/ros2_humble/src/build/experiments/share/experiments/hook/pythonpath_develop.sh'
+[2.232s] Level 1:colcon.colcon_core.environment:checking '/home/isarlab/ros2_humble/src/install/experiments' for CMake module files
+[2.233s] Level 1:colcon.colcon_core.environment:checking '/home/isarlab/ros2_humble/src/install/experiments' for CMake config files
+[2.233s] Level 1:colcon.colcon_core.environment:checking '/home/isarlab/ros2_humble/src/install/experiments/lib'
+[2.234s] Level 1:colcon.colcon_core.environment:checking '/home/isarlab/ros2_humble/src/install/experiments/bin'
+[2.234s] Level 1:colcon.colcon_core.environment:checking '/home/isarlab/ros2_humble/src/install/experiments/lib/pkgconfig/experiments.pc'
+[2.234s] Level 1:colcon.colcon_core.environment:checking '/home/isarlab/ros2_humble/src/install/experiments/lib/python3.10/site-packages'
+[2.234s] Level 1:colcon.colcon_core.shell:create_environment_hook('experiments', 'pythonpath')
+[2.235s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/isarlab/ros2_humble/src/install/experiments/share/experiments/hook/pythonpath.ps1'
+[2.235s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/isarlab/ros2_humble/src/install/experiments/share/experiments/hook/pythonpath.dsv'
+[2.236s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/isarlab/ros2_humble/src/install/experiments/share/experiments/hook/pythonpath.sh'
+[2.236s] Level 1:colcon.colcon_core.environment:checking '/home/isarlab/ros2_humble/src/install/experiments/bin'
+[2.236s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(experiments)
+[2.237s] INFO:colcon.colcon_core.shell:Creating package script '/home/isarlab/ros2_humble/src/install/experiments/share/experiments/package.ps1'
+[2.237s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/isarlab/ros2_humble/src/install/experiments/share/experiments/package.dsv'
+[2.238s] INFO:colcon.colcon_core.shell:Creating package script '/home/isarlab/ros2_humble/src/install/experiments/share/experiments/package.sh'
+[2.239s] INFO:colcon.colcon_core.shell:Creating package script '/home/isarlab/ros2_humble/src/install/experiments/share/experiments/package.bash'
+[2.239s] INFO:colcon.colcon_core.shell:Creating package script '/home/isarlab/ros2_humble/src/install/experiments/share/experiments/package.zsh'
+[2.240s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/isarlab/ros2_humble/src/install/experiments/share/colcon-core/packages/experiments)
+[2.241s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[2.242s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[2.242s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[2.242s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[2.277s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[2.277s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[2.278s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[2.278s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[2.278s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.FileNotFound: Failed to connect to socket /run/user/1000/bus: No such file or directory
+[2.278s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[2.278s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/isarlab/ros2_humble/src/install/local_setup.ps1'
+[2.279s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/isarlab/ros2_humble/src/install/_local_setup_util_ps1.py'
+[2.281s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/isarlab/ros2_humble/src/install/setup.ps1'
+[2.282s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/isarlab/ros2_humble/src/install/local_setup.sh'
+[2.283s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/isarlab/ros2_humble/src/install/_local_setup_util_sh.py'
+[2.284s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/isarlab/ros2_humble/src/install/setup.sh'
+[2.285s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/isarlab/ros2_humble/src/install/local_setup.bash'
+[2.286s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/isarlab/ros2_humble/src/install/setup.bash'
+[2.287s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/isarlab/ros2_humble/src/install/local_setup.zsh'
+[2.288s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/isarlab/ros2_humble/src/install/setup.zsh'

@@ -1,0 +1,4 @@
+# yolo_detector/src/yolo_detector/topic_config.yaml
+
+input_topic: "/environment/RGBCamera/CameraSDT/image_raw"
+track: true #attivo

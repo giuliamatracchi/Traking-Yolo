@@ -1,0 +1,3 @@
+[console_scripts]
+ambulance_motion_node = experiments.ambulance_motion_node:main
+

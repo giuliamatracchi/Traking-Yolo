@@ -1,0 +1,39 @@
+running egg_info
+creating ../build/trajectory_metrics/trajectory_metrics.egg-info
+writing ../build/trajectory_metrics/trajectory_metrics.egg-info/PKG-INFO
+writing dependency_links to ../build/trajectory_metrics/trajectory_metrics.egg-info/dependency_links.txt
+writing entry points to ../build/trajectory_metrics/trajectory_metrics.egg-info/entry_points.txt
+writing requirements to ../build/trajectory_metrics/trajectory_metrics.egg-info/requires.txt
+writing top-level names to ../build/trajectory_metrics/trajectory_metrics.egg-info/top_level.txt
+writing manifest file '../build/trajectory_metrics/trajectory_metrics.egg-info/SOURCES.txt'
+reading manifest file '../build/trajectory_metrics/trajectory_metrics.egg-info/SOURCES.txt'
+writing manifest file '../build/trajectory_metrics/trajectory_metrics.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/isarlab/ros2_humble/src/build/trajectory_metrics/build
+creating /home/isarlab/ros2_humble/src/build/trajectory_metrics/build/lib
+creating /home/isarlab/ros2_humble/src/build/trajectory_metrics/build/lib/trajectory_metrics
+copying trajectory_metrics/__init__.py -> /home/isarlab/ros2_humble/src/build/trajectory_metrics/build/lib/trajectory_metrics
+copying trajectory_metrics/trajectory_metrics_node.py -> /home/isarlab/ros2_humble/src/build/trajectory_metrics/build/lib/trajectory_metrics
+running install
+running install_lib
+creating /home/isarlab/ros2_humble/src/install/trajectory_metrics/lib/python3.10/site-packages/trajectory_metrics
+copying /home/isarlab/ros2_humble/src/build/trajectory_metrics/build/lib/trajectory_metrics/__init__.py -> /home/isarlab/ros2_humble/src/install/trajectory_metrics/lib/python3.10/site-packages/trajectory_metrics
+copying /home/isarlab/ros2_humble/src/build/trajectory_metrics/build/lib/trajectory_metrics/trajectory_metrics_node.py -> /home/isarlab/ros2_humble/src/install/trajectory_metrics/lib/python3.10/site-packages/trajectory_metrics
+byte-compiling /home/isarlab/ros2_humble/src/install/trajectory_metrics/lib/python3.10/site-packages/trajectory_metrics/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/isarlab/ros2_humble/src/install/trajectory_metrics/lib/python3.10/site-packages/trajectory_metrics/trajectory_metrics_node.py to trajectory_metrics_node.cpython-310.pyc
+running install_data
+creating /home/isarlab/ros2_humble/src/install/trajectory_metrics/share/ament_index
+creating /home/isarlab/ros2_humble/src/install/trajectory_metrics/share/ament_index/resource_index
+creating /home/isarlab/ros2_humble/src/install/trajectory_metrics/share/ament_index/resource_index/packages
+copying resource/trajectory_metrics -> /home/isarlab/ros2_humble/src/install/trajectory_metrics/share/ament_index/resource_index/packages
+copying package.xml -> /home/isarlab/ros2_humble/src/install/trajectory_metrics/share/trajectory_metrics
+creating /home/isarlab/ros2_humble/src/install/trajectory_metrics/share/trajectory_metrics/launch
+copying launch/trajectory_metrics.launch.py -> /home/isarlab/ros2_humble/src/install/trajectory_metrics/share/trajectory_metrics/launch
+creating /home/isarlab/ros2_humble/src/install/trajectory_metrics/share/trajectory_metrics/config
+copying config/trajectory_metrics.yaml -> /home/isarlab/ros2_humble/src/install/trajectory_metrics/share/trajectory_metrics/config
+running install_egg_info
+Copying ../build/trajectory_metrics/trajectory_metrics.egg-info to /home/isarlab/ros2_humble/src/install/trajectory_metrics/lib/python3.10/site-packages/trajectory_metrics-0.0.1-py3.10.egg-info
+running install_scripts
+Installing trajectory_metrics_node script to /home/isarlab/ros2_humble/src/install/trajectory_metrics/lib/trajectory_metrics
+writing list of installed files to '/home/isarlab/ros2_humble/src/build/trajectory_metrics/install.log'

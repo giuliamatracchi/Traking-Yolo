@@ -1,0 +1,25 @@
+[2.043s] Invoking command in '/home/isarlab/ros2_humble/src/ros2_unreal_interface': PYTHONPATH=/home/isarlab/ros2_humble/src/build/ros2_unreal_interface/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/isarlab/ros2_humble/src/install/ros2_unreal_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/ros2_unreal_interface build --build-base /home/isarlab/ros2_humble/src/build/ros2_unreal_interface/build install --record /home/isarlab/ros2_humble/src/build/ros2_unreal_interface/install.log --single-version-externally-managed install_data
+[2.426s] running egg_info
+[2.437s] writing ../build/ros2_unreal_interface/ros2_unreal_interface.egg-info/PKG-INFO
+[2.438s] writing dependency_links to ../build/ros2_unreal_interface/ros2_unreal_interface.egg-info/dependency_links.txt
+[2.438s] writing entry points to ../build/ros2_unreal_interface/ros2_unreal_interface.egg-info/entry_points.txt
+[2.440s] writing requirements to ../build/ros2_unreal_interface/ros2_unreal_interface.egg-info/requires.txt
+[2.441s] writing top-level names to ../build/ros2_unreal_interface/ros2_unreal_interface.egg-info/top_level.txt
+[2.447s] reading manifest file '../build/ros2_unreal_interface/ros2_unreal_interface.egg-info/SOURCES.txt'
+[2.447s] writing manifest file '../build/ros2_unreal_interface/ros2_unreal_interface.egg-info/SOURCES.txt'
+[2.447s] running build
+[2.447s] running build_py
+[2.448s] copying src/environment.py -> /home/isarlab/ros2_humble/src/build/ros2_unreal_interface/build/lib/src
+[2.448s] running install
+[2.448s] running install_lib
+[2.448s] copying /home/isarlab/ros2_humble/src/build/ros2_unreal_interface/build/lib/src/environment.py -> /home/isarlab/ros2_humble/src/install/ros2_unreal_interface/lib/python3.10/site-packages/src
+[2.449s] byte-compiling /home/isarlab/ros2_humble/src/install/ros2_unreal_interface/lib/python3.10/site-packages/src/environment.py to environment.cpython-310.pyc
+[2.454s] running install_data
+[2.454s] copying package.xml -> /home/isarlab/ros2_humble/src/install/ros2_unreal_interface/share/ros2_unreal_interface
+[2.454s] running install_egg_info
+[2.457s] removing '/home/isarlab/ros2_humble/src/install/ros2_unreal_interface/lib/python3.10/site-packages/ros2_unreal_interface-0.0.0-py3.10.egg-info' (and everything under it)
+[2.459s] Copying ../build/ros2_unreal_interface/ros2_unreal_interface.egg-info to /home/isarlab/ros2_humble/src/install/ros2_unreal_interface/lib/python3.10/site-packages/ros2_unreal_interface-0.0.0-py3.10.egg-info
+[2.461s] running install_scripts
+[2.485s] Installing environment script to /home/isarlab/ros2_humble/src/install/ros2_unreal_interface/lib/ros2_unreal_interface
+[2.487s] writing list of installed files to '/home/isarlab/ros2_humble/src/build/ros2_unreal_interface/install.log'
+[2.529s] Invoked command in '/home/isarlab/ros2_humble/src/ros2_unreal_interface' returned '0': PYTHONPATH=/home/isarlab/ros2_humble/src/build/ros2_unreal_interface/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/isarlab/ros2_humble/src/install/ros2_unreal_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/ros2_unreal_interface build --build-base /home/isarlab/ros2_humble/src/build/ros2_unreal_interface/build install --record /home/isarlab/ros2_humble/src/build/ros2_unreal_interface/install.log --single-version-externally-managed install_data

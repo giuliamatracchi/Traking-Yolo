@@ -1,0 +1,3 @@
+[console_scripts]
+ackermann_kf_tracker = ackermann_kf_tracker.ackermann_kf_tracker_node:main
+
