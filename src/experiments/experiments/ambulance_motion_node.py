@@ -48,7 +48,7 @@ class AmbulanceMotionNode(Node):
         self.declare_parameter("reference_pose_file", "")
 
         # Straight motion only
-        self.declare_parameter("speed_mps", 0.3)
+        self.declare_parameter("speed_mps", 0.1)
         self.declare_parameter("travel_distance_m", 20.0)
 
         self.odom_topic = str(self.get_parameter("odom_topic").value)
@@ -172,12 +172,9 @@ class AmbulanceMotionNode(Node):
         rp = self.reference_pose
         assert rp is not None
 
-        yaw0 = rp["yaw"]
-        right_x = math.sin(yaw0)
-        right_y = -math.cos(yaw0)
+        x = rp["x"] + self.travel_distance_m
+        y = rp["y"]
 
-        x = rp["x"] + self.travel_distance_m * right_x
-        y = rp["y"] + self.travel_distance_m * right_y
 
         msg = self._make_pose_msg(
             x, y, rp["z"],
@@ -222,12 +219,11 @@ class AmbulanceMotionNode(Node):
         rp = self.reference_pose
         assert rp is not None
 
-        yaw0 = rp["yaw"]
-        right_x = math.sin(yaw0)
-        right_y = -math.cos(yaw0)
+        
+        x = rp["x"] + s
+        y = rp["y"]
 
-        x = rp["x"] + s * right_x
-        y = rp["y"] + s * right_y
+
 
         msg = self._make_pose_msg(
             x, y, rp["z"],
