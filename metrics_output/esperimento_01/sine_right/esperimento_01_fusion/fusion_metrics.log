@@ -1,0 +1,56 @@
+[INFO] [1775034412.623723013] [trajectory_metrics_node]: TrajectoryMetricsNode ready
+  stage: fusion
+  camera_gps_topic: /environment/GPS/GPSSDT/odom
+  ambulance_gps_topic: /environment/GPS/GPSSDTAMBULANCE/odom
+  estimation_topic: /yolo/detections_xyz
+  target_track_id: 1
+  output_dir: /home/isarlab/ros2_humble/metrics_output/esperimento_01/sine_right/esperimento_01_fusion
+  max_abs_pose_m: 500.0
+  max_abs_estimate_m: 200.0
+  max_abs_error_m: 200.0
+  max_pose_step_m: 1.5
+  max_pose_speed_mps: 8.0
+  max_yaw_rate_rps: 1.5
+[INFO] [1775034414.112795638] [trajectory_metrics_node]: GT inizializzata: first_gt_rel_cam = [74.692, 10.100]
+[WARN] [1775034414.741543922] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=9.249673404555071e+24, y=-8126417469.440001
+[WARN] [1775034421.294897806] [trajectory_metrics_node]: Scarto ambulance odom non plausibile: x=-1.6441874497971416e+35, y=-1.8044418030322774e-40
+[WARN] [1775034421.298052569] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=9.249673404555071e+24, y=-8126417469.440001
+[WARN] [1775034421.408137744] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=9.249673404555071e+24, y=-8126417469.440001
+[WARN] [1775034421.519077763] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=25.000m, x=99.7, y=10.099997558593751
+[WARN] [1775034421.521161650] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=9.249673404555071e+24, y=-8126417469.440001
+[WARN] [1775034421.700286546] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=25.000m, x=99.7, y=10.099997558593751
+[WARN] [1775034421.807194874] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=25.000m, x=99.7, y=10.099997558593751
+[WARN] [1775034428.298794061] [trajectory_metrics_node]: Scarto ambulance odom per salto dinamico: step_too_large=25.000m, x=99.7, y=10.099997558593751
+[WARN] [1775034428.301249427] [trajectory_metrics_node]: Scarto camera odom non plausibile: x=9.249673404555071e+24, y=-8126417469.440001
+[WARN] [1775034442.950198762] [trajectory_metrics_node]: Nessun campione raccolto, niente da salvare.
+Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
+Traceback (most recent call last):
+  File "/home/isarlab/ros2_humble/install/trajectory_metrics/lib/python3.10/site-packages/trajectory_metrics/trajectory_metrics_node.py", line 778, in main
+    rclpy.spin(node)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 229, in spin
+    executor.spin_once()
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 751, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 740, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 723, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 620, in _wait_for_ready_callbacks
+    wait_set.wait(timeout_nsec)
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/isarlab/ros2_humble/install/trajectory_metrics/lib/trajectory_metrics/trajectory_metrics_node", line 33, in <module>
+    sys.exit(load_entry_point('trajectory-metrics==0.0.1', 'console_scripts', 'trajectory_metrics_node')())
+  File "/home/isarlab/ros2_humble/install/trajectory_metrics/lib/python3.10/site-packages/trajectory_metrics/trajectory_metrics_node.py", line 785, in main
+    rclpy.shutdown()
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 130, in shutdown
+    _shutdown(context=context)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/utilities.py", line 58, in shutdown
+    return context.shutdown()
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/context.py", line 102, in shutdown
+    self.__context.shutdown()
+rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:241
+[ros2run]: Process exited with failure 1
