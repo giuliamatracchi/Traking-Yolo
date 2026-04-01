@@ -1,3 +1,0 @@
-[console_scripts]
-depth_yolo_fusion = depth_yolo_fusion.depth_yolo_fusion_node:main
-

@@ -1,3 +1,0 @@
-[console_scripts]
-trajectory_metrics_node = trajectory_metrics.trajectory_metrics_node:main
-

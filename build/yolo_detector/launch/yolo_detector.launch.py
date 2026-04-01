@@ -1,1 +1,0 @@
-/home/isarlab/ros2_humble/src/yolo_detector/launch/yolo_detector.launch.py

@@ -1,3 +1,0 @@
-[console_scripts]
-unicycle_kf_tracker = unicycle_kf_tracker.unicycle_kf_tracker_node:main
-

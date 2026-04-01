@@ -1,1 +1,0 @@
-/home/isarlab/ros2_humble/build/depth_yolo_fusion/launch/depth_yolo_fusion.launch.py

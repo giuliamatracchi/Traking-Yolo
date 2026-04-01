@@ -1,9 +1,0 @@
-source;share/depth_yolo_fusion/hook/pythonpath.ps1
-source;share/depth_yolo_fusion/hook/pythonpath.dsv
-source;share/depth_yolo_fusion/hook/pythonpath.sh
-source;share/depth_yolo_fusion/hook/ament_prefix_path.ps1
-source;share/depth_yolo_fusion/hook/ament_prefix_path.dsv
-source;share/depth_yolo_fusion/hook/ament_prefix_path.sh
-source;../../build/depth_yolo_fusion/src/share/depth_yolo_fusion/hook/pythonpath_develop.ps1
-source;../../build/depth_yolo_fusion/src/share/depth_yolo_fusion/hook/pythonpath_develop.dsv
-source;../../build/depth_yolo_fusion/src/share/depth_yolo_fusion/hook/pythonpath_develop.sh
